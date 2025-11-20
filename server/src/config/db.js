@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 export async function connectDB() {
-    const uri = process.env.MONGO_URI; // 👈 Leemos MONGO_URI de process.env
+    const uri = process.env.MONGO_URI; 
 
     // Opcional: comprobación de seguridad
     if (!uri) {
@@ -11,10 +11,10 @@ export async function connectDB() {
     try {
         mongoose.set('strictQuery', true);
         await mongoose.connect(uri, {
-            // 🔑 AJUSTE SUGERIDO: Añadir parámetros por si tienes Mongoose antiguo
+            
             useNewUrlParser: true,
             useUnifiedTopology: true,
-           
+            
         });
         console.log('🗄️  MongoDB conectado');
     } catch (err) {

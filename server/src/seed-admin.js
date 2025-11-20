@@ -1,17 +1,17 @@
 import 'dotenv/config';
 import bcrypt from 'bcrypt';
-// IMPORTAMOS LA FUNCIÓN SIN MODIFICAR
-import {connectDB} from './config/db.js'; // Asegúrate de que importas el default
+
+import {connectDB} from './config/db.js'; 
 import User from './models/User.js';
 
 async function main() {
-   const email = process.argv[2];
-   const password = process.argv[3];
+    const email = process.argv[2];
+    const password = process.argv[3];
 
-   if (!email || !password) {
-   console.error('Uso: npm run seed:admin -- <email> <contrasena>');
-   process.exit(1);
-   }
+    if (!email || !password) {
+    console.error('Uso: npm run seed:admin -- <email> <contrasena>');
+    process.exit(1);
+    }
   await connectDB();
 
   const existe = await User.findOne({ email });

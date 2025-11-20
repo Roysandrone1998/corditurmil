@@ -17,10 +17,10 @@ const app = express();
 app.use(helmet());
 app.use(morgan('dev'));
 
-// 🔑 CORRECCIÓN CRÍTICA DE CORS: Usamos una función para manejar múltiples orígenes
+
 const allowedOrigins = [
-    'http://localhost:5173', // Origen de desarrollo local (Vite/React)
-    process.env.CORS_ORIGIN // Origen de producción (Vercel)
+    'http://localhost:5173', 
+    process.env.CORS_ORIGIN 
 ];
 
 app.use(cors({
