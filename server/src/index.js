@@ -56,7 +56,7 @@ app.use('/api/viajes', viajesRoutes);
 app.use('/api/pdfs', pdfsRoutes);
 
 const PORT = process.env.PORT || 4000;
-
+await connectDB();
 
 ///para vercel no se debe usar app.listen,. se debe exportar el modulo para que este lo envuelva en una funcion serverless
 /*
