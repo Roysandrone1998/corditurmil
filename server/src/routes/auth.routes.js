@@ -13,15 +13,27 @@ router.post("/login", async (req, res) => {
             return res.status(400).json({ error: "Email y contraseña son requeridos" });
         }
 
-        // Busca y verifica usuario/contraseña
+        // 1. Búsqueda: Si no encuentra, user es null.
         const user = await User.findOne({ email });
-        const isValid = await bcrypt.compare(password, user.passwordHash);
 
-        if (!user || !isValid) {
+        // 2. 🔑 CORRECCIÓN DE FLUJO: Si NO existe el usuario, salimos.
+        if (!user) {
+            return res.status(401).json({ error: "Credenciales inválidas" });
+        }
+        
+        // 3. 🔑 AJUSTE CRÍTICO: Conversión para que bcrypt funcione correctamente.
+        const userObj = user.toObject(); 
+        const hashToCompare = userObj.passwordHash.toString();
+
+        // 4. Comparación de contraseña
+        const isValid = await bcrypt.compare(password, hashToCompare); 
+
+        if (!isValid) { 
             return res.status(401).json({ error: "Credenciales inválidas" });
         }
 
-        // Genera el token
+        // Genera el token (El resto de tu código es correcto)
+        // ...
         const token = jwt.sign(
             { email: user.email, role: user.role },
             process.env.JWT_SECRET,
