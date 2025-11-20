@@ -21,9 +21,7 @@ router.post("/login", async (req, res) => {
             return res.status(401).json({ error: "Credenciales inválidas" });
         }
         
-        // ❌ PUNTO CRÍTICO CORREGIDO: 
         // 3. Obtener el hash y asegurarnos de que es una cadena de texto (string)
-        // para que bcrypt.compare() funcione correctamente.
         const passwordHash = user.passwordHash.toString();
         
         // 4. Comparación de contraseña
@@ -40,31 +38,21 @@ router.post("/login", async (req, res) => {
             { expiresIn: "1d" }
         );
 
-        // Define la variable isSecure DENTRO de la ruta
-        const isSecure = req.headers['x-forwarded-proto'] === 'https';
-        
+        // 🔑 CAMBIO CLAVE PARA VERCEL: Robustez en la configuración de cookies
+        const isProduction = process.env.NODE_ENV === 'production';
+        const isSecure = isProduction || req.headers['x-forwarded-proto'] === 'https'; 
+
         // Establece la cookie (Usada por Vercel)
         res.cookie("token", token, {
             httpOnly: true,
-            // sameSite debe ser 'lax' o 'strict' en producción para seguridad. 
-            // Si usas 'none' debes asegurar que 'secure: true' esté activo. 
-            // 'Lax' es un buen punto intermedio. 
-            sameSite: isSecure ? 'lax' : 'strict', 
+            // Usamos 'Lax' en producción. Es seguro y permite la cookie en la navegación de React.
+            // Usamos 'Strict' si no es seguro (entorno local sin HTTPS), aunque es menos común.
+            sameSite: isSecure ? 'Lax' : 'Strict', 
             secure: isSecure
         });
 
         // Devuelve la respuesta
         let responseData = { ok: true, user: { email: user.email, role: user.role } };
-        
-        // NOTA: Quité la lógica de devolver el token en el body en desarrollo, 
-        // ya que la cookie es el método preferido. Si lo necesitas para 
-        // un flujo de desarrollo específico (ej. Postman), puedes dejarlo, 
-        // pero para el flujo normal de React/Cookies no es necesario.
-        // Si el frontend está en un dominio diferente, necesitarás asegurar 
-        // que CORS y las cookies están configurados correctamente para ello.
-        // if (process.env.NODE_ENV !== 'production') {
-        //     responseData.token = token; 
-        // }
         
         return res.json(responseData);
     } catch (err) {
