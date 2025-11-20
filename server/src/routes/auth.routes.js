@@ -2,11 +2,12 @@ import { Router } from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
-
+import { connectDB } from "../config/db.js";
 const router = Router();
 
 router.post("/login", async (req, res) => {
     try {
+        await connectDB();
         const { email, password } = req.body;
 
         if (!email || !password) {
