@@ -47,7 +47,7 @@ router.post("/login", async (req, res) => {
             httpOnly: true,
             // Usamos 'Lax' en producción. Es seguro y permite la cookie en la navegación de React.
             // Usamos 'Strict' si no es seguro (entorno local sin HTTPS), aunque es menos común.
-            sameSite: isSecure ? 'Lax' : 'Strict', 
+            sameSite: isSecure ? 'Lax' : 'lax', 
             secure: isSecure
         });
 
