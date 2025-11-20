@@ -1,24 +1,33 @@
+// config/db.js
 import mongoose from 'mongoose';
 
-export async function connectDB() {
-    const uri = process.env.MONGO_URI; 
+let cachedConnection = null;
 
-    // Opcional: comprobación de seguridad
-    if (!uri) {
-        console.error('Error: La variable MONGO_URI no está definida.');
-        process.exit(1);
-    }
-    try {
-        mongoose.set('strictQuery', true);
-        await mongoose.connect(uri, {
-            
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            
-        });
-        console.log('🗄️  MongoDB conectado');
-    } catch (err) {
-        console.error('Error MongoDB:', err.message);
-        process.exit(1);
-    }
+export async function connectDB() {
+  // Si ya hay una conexión reutilizable, usarla
+  if (cachedConnection) {
+    return cachedConnection;
+  }
+
+  const uri = process.env.MONGO_URI;
+  if (!uri) {
+    throw new Error('MONGO_URI no está definida');
+  }
+
+  try {
+    // Opciones recomendadas para Vercel + MongoDB Atlas
+    const conn = await mongoose.connect(uri, {
+      bufferCommands: false,
+      connectTimeoutMS: 30000,
+      maxIdleTimeMS: 30000,
+      serverSelectionTimeoutMS: 30000,
+    });
+
+    cachedConnection = conn;
+    console.log('✅ MongoDB conectado (con caché)');
+    return conn;
+  } catch (err) {
+    console.error('❌ Error al conectar a MongoDB:', err.message);
+    throw err;
+  }
 }
