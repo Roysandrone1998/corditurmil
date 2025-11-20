@@ -1,0 +1,43 @@
+# --- Node / Monorepo (frontend + backend)
+node_modules/
+**/node_modules/
+
+# Build outputs (Vite/React, etc.)
+dist/
+**/dist/
+.vite/
+**/.vite/
+**/.cache/
+**/.parcel-cache/
+
+# Logs
+logs/
+**/logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Env (¡no subas secretos!)
+.env
+.env.*
+*.env
+*.env.*
+**/.env
+**/.env.*
+!server/.env.example
+!turismo-admin/.env.example
+
+# Uploads locales (si guardás PDFs/archivos en disco)
+server/src/uploads/
+**/uploads/
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+uploads/
+.vercel
+
+.vercel

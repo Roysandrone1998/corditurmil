@@ -1,0 +1,178 @@
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 0rem !important;
+    
+}
+.edu2-page {
+  min-height: 100%;
+  color: var(--w);
+  position: relative;
+   overflow-x: hidden;
+}
+
+/* Título + párrafo */
+  .edu2-hero {
+    padding: 0px 0 20px;
+  }
+.edu2-hero :is(h1
+){
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+   font-size: 5rem;
+
+    color: var(--bs-heading-color);
+  color: inherit; /* opcional */
+}
+/* Carrusel */
+.edu2-gallery {
+   margin-inline: -16px;
+  padding: 10px 0 40px;
+}
+.edu2-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1094px;
+ 
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  
+  box-sizing: border-box;
+}
+
+/* Ajuste del ancho del carrusel para que coincida con los demás elementos */
+.edu2-carousel {
+  /* Cambiamos max-width a 100% para que ocupe todo el ancho disponible dentro del container */
+  max-width: 100%;
+
+  /* Ajustamos el margen para que quede centrado */
+  margin: 14px auto 22px;
+}
+
+.edu2-slide {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* Flechas */
+.edu2-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: #0f1f4a;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  font-size: 22px;
+  font-weight: 900;
+}
+.edu2-nav--left {
+  left: 14px;
+}
+.edu2-nav--right {
+  right: 14px;
+}
+
+/* Descargas */
+.edu2-downloads {
+  margin-top: 8px;
+}
+.edu2-dl-title {
+  margin: 6px 0 12px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+}
+.edu2-dl-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.edu2-pill {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  
+ 
+  background: linear-gradient(180deg, #ffffff, #e9f0ff);
+    color: rgba(58, 93, 174, 1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .edu2-slide {
+    height: 320px;
+  }
+  /* Ajuste del ancho del carrusel en tablet */
+  .edu2-carousel {
+    max-width: 96vw;
+    margin: 14px auto 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .edu2-slide {
+    height: 300px;
+  }
+  .edu2-nav {
+    width: 42px;
+    height: 32px;
+    font-size: 28px;
+    width: 48 px!important;
+    height: 48px !important;
+  }
+  /* Ajuste del ancho del carrusel en móvil */
+  .edu2-carousel {
+            max-width: 94vw;
+        margin: 14px auto 22px;
+    /* Ajustamos el padding para que no haya scroll lateral */
+    padding: 0 ;
+  }
+  .edu2-carousel img{
+    object-fit: cover;
+    width: 100%;
+  }
+  /* Ajustamos la posición de las flechas en móvil */
+  .edu2-nav--left {
+    left: 12px;
+  }
+  .edu2-nav--right {
+    right: 12px;
+  }
+  .edu2-hero :is(h1 ) {
+           margin-top: 1rem;
+        margin-bottom: .5rem;
+        font-size: 3rem;
+    
+    color: var(--bs-heading-color);
+    color: inherit;
+}
+ .edu2-dl-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .edu2-dl-row .edu2-pill {
+    width: 100%;
+    max-width: 280px; /* opcional: limita el ancho máximo en móvil */
+    text-align: center;
+  }
+}
+h3{
+  font-weight: 400 !important;
+  font-size: 1.5rem!important;
+}
+

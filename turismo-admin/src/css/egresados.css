@@ -1,0 +1,314 @@
+  :root{
+    --w:#fff;
+    /* Colores del fondo de Egresados (editables) */
+    --eg1:#05C3DD;  /* arriba */
+    --eg2:#05B8D4;  /* transición */
+    --eg3:#43B0EC;  /* medio */
+    --eg4:#7BA3FF;  /* abajo */
+  }
+
+  /* Fondo global EXCLUSIVO de esta página */
+  body.bg-egresados{
+    /* ajustes rápidos del patrón (podés tocarlos) */
+    --pat-opacity: .10;                /* opacidad del patrón 0–1 */
+    --pat-size: 340px auto;            /* escala del patrón */
+
+    /* 3 capas: velo p/ controlar opacidad, patrón repetido y gradiente suave */
+    background-image:
+      linear-gradient(rgba(255,255,255,var(--pat-opacity)),
+                      rgba(255,255,255,var(--pat-opacity))),
+      url("/img/fondo.png"),
+      linear-gradient(180deg,
+        var(--eg1) 0%,
+        #05C0DB 10%,
+        #05BCD8 20%,
+        #05B7D4 30%,
+        #27B4DB 40%,
+        var(--eg3) 55%,
+        #5AA5F5 70%,
+        #6DA6FC 85%,
+        var(--eg4) 100%
+      );
+
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: auto, var(--pat-size), cover;
+    background-position: 0 0, 0 0, center;
+    background-attachment: fixed, fixed, fixed;
+    background-blend-mode: normal, soft-light, normal; /* fusión suave del patrón */
+  }
+  /* El main NO debe tener fondo propio */
+  .eg-page{
+    position: relative;
+    min-height: 100svh;
+    color: var(--w);
+    background: transparent;
+  }
+  /* ===== HERO ===== */
+  .eg-hero{ padding: 64px 0 48px; }
+  .eg-hero .container{ max-width: 1080px; }
+
+  .eg-hero-card{
+    position: relative;
+    border-radius: 22px;
+    overflow: visible;
+    box-shadow: none;
+    border: 0;
+    background: transparent;
+    height: auto;              /* la imagen define el alto */
+  }
+
+  /* Imagen completa sin recortes */
+  .eg-hero-img{
+    position: relative;
+    width: 100%;
+    height: auto;              /* muestra la foto completa */
+    display: block;
+    object-fit: contain;       /* sin recorte */
+    z-index: 0;
+  }
+
+  /* PNG superpuesto (reemplaza "It's fun") */
+  .eg-sticker{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(-1 * clamp(19px, 22.5vw, 109px));
+    height: clamp(103px, 52vw, 401px);
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* Título centrado dentro de la foto */
+  .eg-hero-mid{
+      position: absolute;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: clamp(13px, 4.2vw, 52px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      top: 32rem;
+      left: 5rem;
+      text-align: center;
+      text-wrap: balance; 
+  }
+
+  /* Cajita blanca translúcida abajo de la foto */
+  .eg-hero-bottom{
+    position: absolute;
+    bottom: -5px;
+    left: 50%; transform: translateX(-50%);
+    width: min(88%, 720px);
+    background: rgba(255,255,255,.6);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    
+    border-radius: 14px;
+    color:#3A5DAE;
+
+    padding: 10px 14px;
+    text-align: center;
+    font-size: 19px; line-height: 1.25;
+    z-index: 2;
+  }
+  .hh3{
+    font-size: 3rem !important;
+    margin-bottom: 3rem;
+  }
+  /* ===== CONTENIDO LISTADO ===== */
+  .eg-content{ padding: 40px 0 28px; }
+
+
+  /* Bloques (icono redondo + textos) */
+  .eg-block{
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 12px; row-gap: 6px;
+    margin-bottom: 22px;
+  }
+  .eg-icon{
+    width: 40px; height: 40px; border-radius: 50%;
+    display: grid; place-items: center;
+  
+    
+  }
+  .eg-icon-img{    margin-top: -10px; width: 29px; height: 29px; object-fit: contain; display: block; }
+
+
+  /* sublista */
+  .eg-sublist{ list-style: none; padding-left: 0; margin: 6px 0 0; }
+  .eg-sublist li{
+    position: relative; padding-left: 16px; margin: 2px 0; color: rgba(255,255,255,.95);list-style: none;
+  }
+  .eg-sublist li::before{
+    content:""; position:absolute; left:0; top:.58em;
+    width:6px; height:6px; border-radius: 50%; background:#fff;list-style: none;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 576px){
+    .eg-sticker{ height: clamp(40px, 10vw, 70px); top: 14px; }
+    .eg-hero-mid{ font-size: 1rem; bottom: 70px; }
+    .eg-hero-bottom{ width: 92%; }
+  }
+
+  /* ===== KIT ===== */
+  .eg-subtitle{
+    font-weight: 900;letter-spacing: .5px;
+    margin: 18px 0 6px;list-style: none;
+  }
+  .eg-subdesc{ margin: 0 0 14px; color: rgba(255,255,255,.92); }
+
+  .eg-kit-card{
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.30);
+    box-shadow: 0 14px 28px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.25);
+    background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+    max-width: 680px;
+  }
+  .eg-kit-img{ display:block; width:100%; height:auto; object-fit: cover; }
+
+  /* ===== Botones tipo píldora ===== */
+  .eg-kit-actions{
+    display: flex; gap: 22px; flex-wrap: wrap;
+    align-items: center; 
+    margin: 12px 0 22px;
+  }
+  .eg-pill{
+    display: inline-block;
+    border-radius: 999px;
+    padding: .55rem 1.1rem;
+    font-weight: 800; letter-spacing: .2px;
+    background: linear-gradient(180deg, #ffffff, #e9f0ff);
+    color: #1b2b5a; text-decoration: none;
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 10px 18px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.65);
+  }
+  .eg-pill:hover{ filter: brightness(.98); }
+
+  /* ===== Carrusel inferior ===== */
+  .egc-wrap{ margin: 10px 0 24px; }
+  .egc-card{
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.35);
+    box-shadow: 0 14px 26px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.2);
+    background: #0b1b4a;     /* fallback */
+  }
+  .egc-img{ width: 100%; height: 530px; object-fit: cover; display: block; }
+  .egc-grad{
+    position: absolute; left:0; right:0; bottom:0; height:35%;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%,
+                                        rgba(0,0,0,.35) 60%,
+                                        rgba(0,0,0,.6) 100%);
+    pointer-events:none;
+  }
+  .egc-btn{
+    position: absolute; width: 44px; height: 44px;
+    border-radius: 50%; border:0; display:grid; place-items:center;
+    background: rgba(255,255,255,.95); color:#2b2b2b;
+    box-shadow: 0 6px 16px rgba(0,0,0,.18); cursor: pointer;
+  }
+  .egc-prev{ left: 14px; top: 50%; transform: translateY(-50%); }
+  .egc-next{ right: 14px; top: 50%; transform: translateY(-50%); }
+  .egc-btn:active{ transform: scale(.96) translateY(-50%); }
+
+  @media (max-width: 991.98px){
+    .egc-img{ height: 320px; }}
+/* ======== Responsive: Móvil (hasta 576px) ======== */
+@media (max-width: 576px) {
+  .eg-hero {
+    padding: 1rem 0 0.5rem;
+  }
+
+  .eg-hero-card {
+           width: 91%;
+        margin-left: 17px;
+        margin-right: 17px !important;
+        border-radius: 0;
+  }
+
+  .eg-hero-img {
+    height: auto;
+    max-height: 400px;
+  }
+
+  .eg-sticker {
+    height: 8rem !important;
+        top: -39px !important;
+  }
+
+ .eg-hero-mid {
+        font-size: 1.5rem !important;
+        top: 9rem !important;
+        bottom: 70px !important;
+        left: 0 !important;
+        right: 0 !important;
+    
+    width: 100% !important;}
+
+  .eg-hero-bottom {
+    width: 90%;
+    bottom: -7rem;
+    font-size: 0.875rem;
+    padding: 8px 10px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .eg-kit-actions{
+        margin: 12px 0 23px;
+    margin-left: 24px;
+  }
+  .egc-card {
+    margin-left: 17px;
+    margin-right: 17px;
+  }
+  .hh3 {
+    
+    text-align: center;
+        margin-top: 7rem !important;
+    margin-bottom: 2rem !important;
+    font-size: 1.9rem !important;
+  }
+
+  .eg-block {
+    margin-bottom: 1rem;
+  }
+.eg-kit-card {
+    max-width: 100%;
+            margin-left: 16px;
+        margin-right: 16px;
+  }
+  .eg-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+      .eg-icon-img {
+        width: 23px;
+        height: 24px;
+        margin-top: -10px;
+        margin-left: 19px;
+    }
+
+  /* Ajuste para el carrusel */
+  .egc-img {
+    height: 280px;
+  }
+
+  .egc-grad {
+    height: 25%;
+  }
+
+  .egc-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .egc-prev,
+  .egc-next {
+            left: 317px;
+    right: 8px;
+  }
+}

@@ -1,0 +1,180 @@
+.home-hero{
+  position: relative;
+  overflow: hidden;
+}
+.home-hero::after{
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 60%;
+  
+  pointer-events: none;
+}
+.home-hero :is(h1
+){
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+   font-size: 5rem;
+       line-height: 0.8 !important;
+    color: var(--bs-heading-color);
+  color: inherit; /* opcional */
+}
+/* ===== Card estilo Figma ===== */
+.home-card{
+  position: relative;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.08));
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow: 0 12px 28px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.25);
+  overflow: hidden;
+  height: 530px;
+}
+.home-card-head{
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 95px; display: grid; place-items: center; text-align: center;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.76));
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  padding: 8px 12px; z-index: 2;
+}
+.home-card-head h5{
+  margin: 0 0 2px;
+  font-weight: 900; letter-spacing: .5px; color: #3A5DAE; text-transform: uppercase;
+}
+.home-card-head p{ margin: 0; font-size: .93rem; line-height: 1.2; color: #3A5DAE; }
+
+.home-card-img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%; /* ⬅️ clave: mueve el encuadre hacia abajo */
+  z-index: 0;
+}
+.home-pill{
+  border-radius: 999px !important; padding: .6rem 1.1rem;
+  font-weight: 900; letter-spacing: .3px; text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff, #e9f0ff);
+  color: #1b2b5a !important; border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 18px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.65);
+}
+.home-pill:hover{ filter: brightness(0.98); }
+
+/* Quiénes somos */
+.home-about-header h3{ color: #fff; letter-spacing: .3px; }
+.home-social{ display: flex; gap: 10px; }
+.hs-btn{
+  width: 36px; height: 36px; border-radius: 50%;
+  display: grid; place-items: center;
+  color: #1b2b5a; text-decoration: none; 
+  
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.hs-btn:hover{ transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.14); }
+
+.home-about-card{
+  max-width: 100%;
+  padding: 14px 18px; border-radius: 18px;
+background: linear-gradient(180deg, rgb(255 255 255 / 36%), rgba(255, 255, 255, 36%));
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 10px 24px rgba
+#0000002e
+(0, 0, 0, .18), inset 0 1px 0 rgb(95 82 160 / 55%);
+
+}
+.home-about-card p{ color: #ffffff; line-height: 1.35; }
+
+/* Responsivo */
+@media (max-width: 992px){ .home-card{ height: 420px; } }
+@media (max-width: 576px){
+  .home-hero h1 {
+    margin-top: 0 !important;
+    font-size: 1.9rem !important;
+    line-height: 1;
+  }
+  .home-card {
+        height: 460px !important;
+        width: auto;
+        position: relative;
+        margin-left: 17px;
+        margin-right: 17px;
+  }
+.home-hero {
+            padding-top: 14px;
+  }
+ 
+  .home-hero p {
+    font-size: 0.9rem !important;
+    line-height: 1 !important;
+    margin:0;
+            padding-left: 47px;
+        padding-right: 47px;
+  }
+
+  .home-card-head {
+    height: 84px;
+  }
+  .home-card-head h5 {
+    font-size: 1.1rem;
+  }
+  .home-card-head p {
+    font-size: 0.85rem;
+  }
+
+  .home-social {
+    gap: 8px;
+  }
+  .hs-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .home-about-card {
+    padding: 12px 14px;
+    max-width: 100%;
+  }
+  .home-about-card p {
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  /* Ajuste para los botones "CONOCÉ MÁS" */
+  .home-pill {
+            position: relative;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+        letter-spacing: 0.2px;
+        margin-top: -7rem;
+        z-index: 49;
+  }
+
+
+  .home-about-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .home-about-header h3 {
+    font-size: 2.5rem !important;
+  }
+   .home-social {
+ gap: 8px;
+        position: relative;
+        left: -104px;
+    
+  }
+  .my-5 {
+    margin-top: 1rem !important;
+    margin-bottom: 3rem !important;
+}
+.py-5{
+  padding-top: 0 !important;
+          padding-left: 17px;
+        padding-right: 17px;
+}
+.mx-auto {
+    margin-right: 16px !important;
+    margin-left: 16px !important;
+}
+}

@@ -1,0 +1,30 @@
+/* src/css/global.css  (o tu hoja principal) */
+:root{
+  --deep:#253C70; --mid:#3A5DAE; --light:#7BA3FF;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  /* Fondo patrón repetido en toda la página */
+  background-image: url("/img/fondo.png");
+  background-repeat: repeat;          /* clave para que se repita */
+  background-size: auto;              /* patrón tal cual */
+  /* Si querés escalar un toque: background-size: 300px auto; */
+  background-attachment: fixed;       /* opcional: efecto fijo */
+}
+
+/* Un contenedor general si usás layout */
+.app-shell {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Compensamos la altura de la nav sticky para que el contenido no se esconda */
+.main-content {
+  padding-top: 72px; /* = altura navbar */
+}
