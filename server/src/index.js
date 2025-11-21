@@ -9,6 +9,9 @@ import cookieParser from 'cookie-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+
+import testRoutes from './routes/test.routes.js'; 
+
 import { connectDB } from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
 import viajesRoutes from './routes/viajes.routes.js';
@@ -57,7 +60,7 @@ app.use('/api/pdfs', pdfsRoutes);
 
 const PORT = process.env.PORT || 4000;
 await connectDB();
-
+app.use('/api/test', testRoutes); 
 ///para vercel no se debe usar app.listen,. se debe exportar el modulo para que este lo envuelva en una funcion serverless
 /*
 app.listen(PORT, () => {
