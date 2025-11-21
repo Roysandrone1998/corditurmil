@@ -19,6 +19,12 @@
     color: var(--bs-heading-color);
   color: inherit; /* opcional */
 }
+
+  .home-hero p {
+
+    line-height: 1 !important;
+
+  }
 /* ===== Card estilo Figma ===== */
 .home-card{
   position: relative;
