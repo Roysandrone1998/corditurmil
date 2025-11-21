@@ -8,7 +8,7 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import dbMiddleware from './middleware/db.js'
 
 import testRoutes from './routes/test.routes.js'; 
 
@@ -59,8 +59,12 @@ app.use('/api/viajes', viajesRoutes);
 app.use('/api/pdfs', pdfsRoutes);
 
 const PORT = process.env.PORT || 4000;
-await connectDB();
+
+
+
 app.use('/api/test', testRoutes); 
+
+app.use('/api', dbMiddleware);
 ///para vercel no se debe usar app.listen,. se debe exportar el modulo para que este lo envuelva en una funcion serverless
 /*
 app.listen(PORT, () => {

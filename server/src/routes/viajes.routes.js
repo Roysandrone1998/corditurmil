@@ -7,7 +7,7 @@ import requireAuth from "../middleware/requireAuth.js";
 import Viaje from "../models/Viaje.js";
 
 const router = Router();
-
+await connectDB();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

@@ -12,7 +12,7 @@ async function main() {
     console.error('Uso: npm run seed:admin -- <email> <contrasena>');
     process.exit(1);
     }
-  await connectDB();
+
 
   const existe = await User.findOne({ email });
   if (existe) {
