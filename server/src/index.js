@@ -1,6 +1,8 @@
-import 'dotenv/config';
-import * as dotenv from 'dotenv';
-dotenv.config({ path: '../.env' });
+if (process.env.NODE_ENV !== 'production') {
+  import('dotenv').then(dotenv => {
+    dotenv.config({ path: '../../.env' }); // ← ajusta la ruta según tu estructura
+  });
+}
 import express from 'express';
 import cors from 'cors'; // Importado
 import helmet from 'helmet';
