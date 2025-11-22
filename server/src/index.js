@@ -1,19 +1,13 @@
-if (process.env.NODE_ENV !== 'production') {
-  import('dotenv').then(dotenv => {
-    dotenv.config({ path: '../../.env' }); // ← ajusta la ruta según tu estructura
-  });
-}
 import express from 'express';
-import cors from 'cors'; // Importado
+import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import dbMiddleware from './middleware/db.js'
 
+import dbMiddleware from './middleware/db.js';
 import testRoutes from './routes/test.routes.js'; 
-
 import { connectDB } from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
 import viajesRoutes from './routes/viajes.routes.js';
