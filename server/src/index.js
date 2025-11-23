@@ -21,7 +21,7 @@ app.use(morgan('dev'));
 
 const allowedOrigins = [
     'http://localhost:5173', 
-    'https://corditurmil-gxv4.vercel.app' 
+    process.env.CORS_ORIGIN 
 ];
 
 app.use(cors({
