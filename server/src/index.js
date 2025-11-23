@@ -72,5 +72,5 @@ connectDB().then(() => {
     console.error('❌ Error fatal al conectar a la DB:', err);
 });
 
-// Export default ya no es estrictamente necesario en Render, pero no molesta
+
 export default app;
