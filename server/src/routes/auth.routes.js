@@ -19,36 +19,36 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ error: "Credenciales inválidas" });
     }
 
-    // ✅ 1. Logs MOVIDOS después de que `user` existe
-    console.log('Email recibido:', email);
-    console.log('Contraseña recibida:', password);
-    console.log('Hash almacenado:', user.passwordHash);
-
-    // ✅ 2. Comparación 
     const isValid = await bcrypt.compare(password, user.passwordHash);
 
     if (!isValid) {
       return res.status(401).json({ error: "Credenciales inválidas" });
     }
 
-    // ✅ 3. Generación de token y cookie
+    // Generación de token
     const token = jwt.sign(
       { email: user.email, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
 
+    // ✅ CORRECCIÓN 2: Configuración de Cookie Multi-Dominio
     const isProduction = process.env.NODE_ENV === 'production';
-    const isSecure = isProduction || req.headers['x-forwarded-proto'] === 'https';
 
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: isSecure ? 'Lax' : 'Strict',
-      secure: isSecure
+      // secure: true es OBLIGATORIO en Render para cookies sameSite: 'none'
+      secure: isProduction, 
+      // sameSite: 'none' es OBLIGATORIO para cruzar de Render a Vercel
+      sameSite: isProduction ? 'none' : 'lax',
+      maxAge: 24 * 60 * 60 * 1000 // 1 día
     });
 
+    // ✅ CORRECCIÓN 3: Devolvemos el token también en el JSON
+    // Esto asegura que si la cookie falla, el frontend tenga el token a mano
     return res.json({
       ok: true,
+      token: token, 
       user: { email: user.email, role: user.role }
     });
 
@@ -59,12 +59,22 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
-  res.clearCookie("token");
+  const isProduction = process.env.NODE_ENV === 'production';
+  
+  // Para borrar la cookie hay que pasarle EXACTAMENTE las mismas opciones
+  res.clearCookie("token", {
+      httpOnly: true,
+      secure: isProduction,
+      sameSite: isProduction ? 'none' : 'lax',
+  });
+  
   res.json({ ok: true });
 });
 
 router.get("/me", (req, res) => {
   let token = req.cookies?.token;
+  
+  // Respaldo: leer headers si la cookie falló
   if (!token) {
     const authHeader = req.headers.authorization;
     if (authHeader && authHeader.startsWith('Bearer ')) {
@@ -78,7 +88,13 @@ router.get("/me", (req, res) => {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
     return res.json({ ok: true, user: { email: payload.email, role: payload.role } });
   } catch {
-    res.clearCookie("token");
+    // Si el token no sirve, intentamos limpiar la cookie
+    const isProduction = process.env.NODE_ENV === 'production';
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: isProduction ? 'none' : 'lax',
+    });
     return res.json({ ok: false });
   }
 });
