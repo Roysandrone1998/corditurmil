@@ -35,6 +35,8 @@
 
 /* Input tipo “pill” con gradiente suave e inner highlight */
 .search-input{
+  position: relative;
+    left: -13px;
       width: 57%;
     height: 24px;
     margin-left: 244px;
@@ -56,9 +58,9 @@
 
 /* Botón circular que sobresale a la derecha */
 .search-button{
-  position: absolute;
-  right: -10px;                          /* sobresale un poco del input */
-  top: 50%; transform: translateY(-50%);
+     position: absolute;
+    right: 0px;
+    top: 50%; transform: translateY(-50%);
     width: 32px;
     height: 32px;
   border-radius: 50%;

@@ -15,14 +15,14 @@
     margin-top: 2rem;
     margin-bottom: 1.5rem;
    font-size: 5rem;
-       line-height: 0.8 !important;
+       line-height: 1 !important;
     color: var(--bs-heading-color);
   color: inherit; /* opcional */
 }
 
   .home-hero p {
 
-    line-height: 1 !important;
+    line-height: 1.1 !important;
 
   }
 /* ===== Card estilo Figma ===== */
