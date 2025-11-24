@@ -273,7 +273,7 @@ export default function Navbar() {
                 </li>
               ))}
           </ul>
-          <div className="drawer-section">SÍGUENOS</div>
+          <div className="drawer-section">QUIENES SOMOS</div>
           <div className="drawer-social">
             <a href="https://wa.me/5493430000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <img src="/img/wspazul.png" alt="" className="drawer-icon-img" />

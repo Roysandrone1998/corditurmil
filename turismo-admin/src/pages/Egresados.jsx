@@ -38,8 +38,8 @@ export default function EgresadosHome() {
               EL FIN DE LA PRIMARIA!
             </h2>
             <div className="eg-hero-bottom font-helvetica w-200">
-              Juegos, aventuras, naturaleza y nuevos recuerdos para toda la vida.
-              En Corditur organizamos todo para que los chicos disfruten al máximo,
+              Juegos, aventuras, naturaleza y nuevos recuerdos para toda la vida.<br/>
+              En Corditur organizamos todo para que los chicos disfruten al máximo,<br/>
               con la seguridad y el acompañamiento que las familias necesitan.
             </div>
           </div>

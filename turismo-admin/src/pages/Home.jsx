@@ -23,7 +23,7 @@ export default function Home() {
       <article className="home-card">
         <div className="home-card-head">
           <h5 className="font-tommy w-500">INDIVIDUALES</h5>
-          <p className="font-helvetica w-200">Viajes únicos. Vos elegís el destino, nosotros lo hacemos posible.</p>
+          <p className="font-helvetica w-200">Viajes únicos. Vos elegís el destino,<br/> nosotros lo hacemos posible.</p>
         </div>
         <img
           className="home-card-img"
@@ -41,7 +41,7 @@ export default function Home() {
       <article className="home-card">
         <div className="home-card-head">
           <h5 className="font-tommy w-500">EGRESADOS</h5>
-          <p className="font-helvetica w-200">El viaje que nunca se olvida. Diversión, organización y seguridad.</p>
+          <p className="font-helvetica w-200">El viaje que nunca se olvida. Diversión,<br/> organización y seguridad garantizadas.</p>
         </div>
         <img
           className="home-card-img"
@@ -59,7 +59,9 @@ export default function Home() {
       <article className="home-card">
         <div className="home-card-head">
           <h5 className="font-tommy w-500">EDUCATIVOS</h5>
-          <p className="font-helvetica w-200">Viajes pensados para aprender, descubrir y crecer. Una experiencia formativa.</p>
+          <p className="font-helvetica w-200">  Viajes pensados para aprender,
+descubrir y crecer. Una experiencia
+formativa y divertida.</p>
         </div>
         <img
           className="home-card-img"
@@ -103,9 +105,9 @@ export default function Home() {
     {/* tarjeta translúcida */}
     <div className="home-about-card">
       <p className="mb-0 font-helvetica w-200">
-        Somos Corditur, una agencia con 30 años de experiencia en el sector turístico.
-        Organizamos viajes educativos, viajes de egresados y experiencias personalizadas para grupos o pasajeros individuales.
-        Nos mueve el compromiso, la organización y la pasión por viajar. Acompañamos cada viaje desde la planificación
+        Somos Corditur, una agencia con 30 años de experiencia en el sector turístico.<br/>
+        Organizamos viajes educativos, viajes de egresados y experiencias personalizadas para grupos o pasajeros individuales.<br/>
+        Nos mueve el compromiso, la organización y la pasión por viajar. Acompañamos cada viaje desde la planificación<br/>
         hasta el regreso, cuidando cada detalle para que sea una experiencia única.
       </p>
     </div>

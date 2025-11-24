@@ -149,9 +149,9 @@ export default function Individuales() {
       </section>
 
       {/* Título INTERNACIONALES */}
-      <h2 className="text-center font-tommy w-500 mb-2 text-white h2inter">VIAJES INTERNACIONALES</h2>
+      <h2 className="text-center font-tommy w-500  text-white h2inter">VIAJES INTERNACIONALES</h2>
       <p className="text-center text-white font-helvetica w-200 pinter">
-        Descubrí el mundo con <strong>Corditur</strong>. Organizamos experiencias únicas a destinos internacionales.
+        Descubrí el mundo con <strong>Corditur</strong>. Organizamos experiencias únicas a destinos internacionales.<br/>
         Desde Brasil y Uruguay, hasta Europa y más. Vos elegís el lugar, nosotros lo hacemos realidad.
       </p>
 

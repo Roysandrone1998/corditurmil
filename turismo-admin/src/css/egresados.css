@@ -96,8 +96,8 @@
   .eg-hero-bottom{
     position: absolute;
     bottom: -5px;
-    left: 50%; transform: translateX(-50%);
-    width: min(88%, 720px);
+    left: 48%; transform: translateX(-50%);
+    width: min(88%, 720px) !important;
     background: rgba(255,255,255,.6);
     backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
     
@@ -177,7 +177,9 @@
   .eg-pill{
     display: inline-block;
     border-radius: 999px;
-    padding: .55rem 1.1rem;
+    padding: .15rem 1.1rem;
+        margin-bottom: 5px;
+    margin-top: 15px;
     font-weight: 800; letter-spacing: .2px;
     background: linear-gradient(180deg, #ffffff, #e9f0ff);
     color: #1b2b5a; text-decoration: none;
