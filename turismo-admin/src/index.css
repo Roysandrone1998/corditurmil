@@ -82,8 +82,8 @@ html, body { font-family: var(--ff-base); }
 }
 
 html, body { 
-   min-height: 100dvh; 
-   overflow-x: hidden; 
+  min-height: 100dvh; 
+  overflow-x: hidden; 
 }
 
 body{
@@ -95,7 +95,7 @@ body{
       linear-gradient(
          to bottom,
          rgba(123,163,255,1) 0%,
-         rgb(255, 0, 0) 18%,
+         rgba(123,163,255,1) 18%,
          rgba(58,93,174,1) 50%,
          rgba(58,93,174,1) 82%,
          rgba(37,60,112,1) 100%
