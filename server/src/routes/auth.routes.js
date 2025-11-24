@@ -24,7 +24,7 @@ router.post("/login", async (req, res) => {
     console.log('Contraseña recibida:', password);
     console.log('Hash almacenado:', user.passwordHash);
 
-    // ✅ 2. Comparación directa (SIN .toString())
+    // ✅ 2. Comparación 
     const isValid = await bcrypt.compare(password, user.passwordHash);
 
     if (!isValid) {
