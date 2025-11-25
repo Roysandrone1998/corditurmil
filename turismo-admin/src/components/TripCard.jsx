@@ -2,11 +2,12 @@ import { memo } from "react";
 import "../css/tripcard.css";
 
 // Origen del server para abrir PDFs (quita el "/api" del VITE_API_URL)
+// Nota: Solo se usará si por alguna razón hay archivos viejos locales.
 const API_ORIGIN = (import.meta.env.VITE_API_URL || "http://localhost:4000/api")
   .replace(/\/api\/?$/, "");
 
-// Link de WhatsApp (configuralo en tu .env del front)
-const WSP_LINK = import.meta.env.VITE_WSP_LINK || ""; // ej: https://wa.me/5493430000000?text=Hola%20Corditur
+// Link de WhatsApp
+const WSP_LINK = import.meta.env.VITE_WSP_LINK || ""; 
 
 function fmtDM(dateStr) {
   if (!dateStr) return "—";
@@ -17,15 +18,26 @@ function fmtDM(dateStr) {
 }
 
 function pickFechaSalida(v) {
-  // Mostramos fecha_inicio si existe; si no, fecha_salida
   return v.fecha_inicio || v.fecha_salida || null;
 }
 
-
-
 function TripCard({ v }) {
   const fechaSalida = pickFechaSalida(v);
-  const pdfHref = v.pdf_itinerario ? `${API_ORIGIN}${v.pdf_itinerario}` : "";
+  
+  // --- CAMBIO AQUÍ ---
+  // Si v.pdf_itinerario existe...
+  let pdfHref = "";
+  if (v.pdf_itinerario) {
+    // 1. Si empieza con "http", es de Cloudinary (URL absoluta) -> Úsala directo.
+    if (v.pdf_itinerario.startsWith("http")) {
+        pdfHref = v.pdf_itinerario;
+    } 
+    // 2. Si no, asumimos que es un archivo viejo local -> Le pegamos el origen.
+    else {
+        pdfHref = `${API_ORIGIN}${v.pdf_itinerario}`;
+    }
+  }
+  // -------------------
 
   return (
     <div className="trip-card position-relative p-3 p-md-4">
@@ -40,8 +52,6 @@ function TripCard({ v }) {
         >
           <span className="txt">RESERVÁ AHORA!</span>
           <img src="/img/wspazul.png" alt="" className="ico" width="18" height="18" /> 
-          {/* Si preferís PNG en vez de SVG, reemplazá <WaIcon /> por:
-              <img src="/img/wa.png" alt="" className="ico" width="18" height="18" /> */}
         </a>
       </div>
 
