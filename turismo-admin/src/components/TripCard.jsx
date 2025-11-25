@@ -1,7 +1,7 @@
 import { memo } from "react";
 import "../css/tripcard.css";
 
-// Origen del server para abrir PDFs (quita el "/api" del VITE_API_URL)
+
 // Nota: Solo se usará si por alguna razón hay archivos viejos locales.
 const API_ORIGIN = (import.meta.env.VITE_API_URL || "http://localhost:4000/api")
   .replace(/\/api\/?$/, "");
@@ -24,8 +24,6 @@ function pickFechaSalida(v) {
 function TripCard({ v }) {
   const fechaSalida = pickFechaSalida(v);
   
-  // --- CAMBIO AQUÍ ---
-  // Si v.pdf_itinerario existe...
   let pdfHref = "";
   if (v.pdf_itinerario) {
     // 1. Si empieza con "http", es de Cloudinary (URL absoluta) -> Úsala directo.
