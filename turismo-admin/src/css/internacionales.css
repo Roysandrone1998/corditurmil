@@ -1,0 +1,18 @@
+/* 1. Asegurate que el contenedor padre (usualmente #root en React) ocupe toda la pantalla */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 100% del alto de la ventana visible */
+}
+
+/* 2. Hacé que tu contenido principal (.page) crezca para empujar el footer */
+.page {
+  flex: 1; /* Esto es la clave: le dice "ocupá todo el espacio disponible que sobre" */
+  width: 100%;
+  
+  /* Mantené tus otros estilos que ya tenías */
+  /* display: flex; flex-direction: column; etc... */
+}
+.main-internacionales {
+        margin-bottom: 155px; /* Ajustá este valor según la altura de tu footer */
+}
