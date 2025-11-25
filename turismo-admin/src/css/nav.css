@@ -101,65 +101,93 @@
   outline-offset: 2px;
 }
 
-/* ========= DRAWER / MENÚ HAMBURGUESA ========= */
-.drawer-overlay{ position: fixed; inset: 0; z-index: 110; pointer-events: none; }
-.drawer-overlay.open{ pointer-events: auto; }
-.drawer-backdrop{
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,.28);
-  backdrop-filter: blur(1px);
-  opacity: 0; transition: opacity .25s ease;
+.drawer-overlay { 
+    position: fixed; inset: 0; z-index: 110; pointer-events: none; 
 }
-.drawer-overlay.open .drawer-backdrop{ opacity: 1; }
+.drawer-overlay.open { 
+    pointer-events: auto; 
+}
+.drawer-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,.28);
+    backdrop-filter: blur(1px);
+    opacity: 0; transition: opacity .25s ease;
+}
+.drawer-overlay.open .drawer-backdrop { opacity: 1; }
 
-.drawer-card{
-  position: absolute; top: 18px; left: 12px;
-  width: min(487px, calc(100% - 32px));
-  background: #fff; color:#1b2b5a;
-  border-radius: 20px; border: 1px solid rgba(0,0,0,.08);
-  box-shadow: 0 14px 40px rgba(0,0,0,.25);
-  transform: translateY(-8px) scale(.98);
-  opacity: 0; transition: transform .28s ease, opacity .28s ease;
+.drawer-card {
+    position: absolute; top: 18px; left: 12px;
+        width: min(399px, calc(100% - 30px));
+    height: 399px;
+    background: #fff; 
+    color: #1b2b5a;
+    border-radius: 20px; 
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 14px 40px rgba(0,0,0,.25);
+    transform: translateY(-8px) scale(.98);
+    opacity: 0; transition: transform .28s ease, opacity .28s ease;
 }
-.drawer-overlay.open .drawer-card{ transform:none; opacity:1; }
+.drawer-overlay.open .drawer-card { transform:none; opacity:1; }
 
-.drawer-head{
-  display:flex; align-items:center; justify-content: space-between;
-  padding: 10px 14px; border-bottom: 1px solid rgba(0,0,0,.06);
+.drawer-head {
+    display:flex; align-items:center; justify-content: space-between;
+    padding: 10px 14px; border-bottom: 1px solid rgba(0,0,0,.06);
 }
-.drawer-badge{ height: 28px; }
-.drawer-close{
-  width:36px; height:36px; border:0; border-radius:50%;
-  background:#f2f5ff; color:#1b2b5a; font-size:22px; font-weight:900; line-height:1;
-  cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
+.drawer-badge { height: 28px; }
 
-.drawer-list{ list-style:none; padding: 6px 10px 10px; margin:0; }
-.drawer-link{
-  position:relative; display:block; padding:14px;
-  color:#1b2b5a; text-decoration:none; text-transform:uppercase;
-  font-weight:900; letter-spacing:.3px; border-radius:12px;
-}
-.drawer-link:hover{ background: rgba(123,163,255,.10); }
-.drawer-link.active{
-  color:#1b2b5a;
-  background: linear-gradient(180deg,#EAF0FF,#DCE7FF);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+.drawer-close {
+    width: 36px; height: 36px; border: 0; border-radius: 50%;
+    background: #f2f5ff; color: #1b2b5a; font-size: 22px; font-weight: 900; line-height: 1;
+    cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
-.drawer-section{
-  padding: 6px 16px 0; margin-top: 4px; color: #1b2b5a;
-  font-weight: 900; text-transform: uppercase; letter-spacing:.3px;
+.drawer-list { 
+    list-style: none; padding: 6px 10px 10px; margin: 0;     margin-bottom: 39px;
 }
-.drawer-social{ display:flex; gap:12px; padding: 10px 16px 16px; }
-.drawer-social a{
-  width:36px; height:36px; display:grid; place-items:center;
-  color:#1b2b5a; text-decoration:none;
+
+/* ACÁ ESTÁ LA MAGIA DEL GROSOR */
+.drawer-link {
+    position: relative; 
+    display: block; 
+    padding: 12px 16px; /* Ajusté un poco el padding para que se vea más compacto */
+    color: #1b2b5a; 
+    text-decoration: none; 
+    text-transform: uppercase;
+    font-size: 15px; /* Tamaño explícito para ayudar al grosor visual */
+    font-weight: 650; /* Extra bold sólido */
+    letter-spacing: .5px; /* Un pelín más de aire para que se lea bien en bold */
+    border-radius: 12px;
+    transition: background 0.2s ease;
 }
-.drawer-social a:hover{ transform: translateY(-1px); }
+
+/* Hover suave */
+.drawer-link:hover { 
+    background: rgba(123, 163, 255, .15); 
+}
+
+/* ACÁ ESTÁ LA MAGIA DEL COLOR DE FONDO SELECCIONADO */
+.drawer-link.active {
+    color: #0f1f4a; /* Un azul un toque más oscuro para el texto */
+    /* Este color sólido imita mejor la referencia de la izquierda */
+    background-color: rgba(161, 190, 255, 1); 
+    box-shadow: none; /* Saqué el inset blanco que lo hacía ver "lavado" */
+}
+
+.drawer-section {
+    padding: 12px 25px 4px; /* Un poco más de aire arriba */
+    margin-top: 4px; color: #1b2b5a;
+    letter-spacing: .3px;
+    font-size: 16px;
+}
+.drawer-social { display: flex; gap: 12px;padding: 11px 20px 16px; }
+.drawer-social a {
+    width: 36px; height: 36px; display: grid; place-items: center;
+    color: #1b2b5a; text-decoration: none;
+}
+.drawer-social a:hover { transform: translateY(-1px); }
 
 @media (max-width: 640px){
-  .drawer-card{ top: 78px; left: 12px; width: calc(100% - 24px); }
+    .drawer-card { top: 78px; left: 12px; width: calc(100% - 24px); }
 }
 .f-copy {
     margin-right: -56px;

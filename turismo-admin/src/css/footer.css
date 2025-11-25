@@ -105,6 +105,7 @@
     font-size: 14px;
     position: relative;
     top: 15px;
+        right: 85px;
     line-height: 17px;
 }
 
@@ -113,7 +114,7 @@
   text-decoration: none;
       position: relative;
     top:  7px;
-  
+      right: 85px;
 }
 .footer-mail:hover {
   text-decoration: underline;

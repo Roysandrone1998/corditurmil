@@ -11,9 +11,12 @@ export default function EgresadosHome() {
 
   // Slides del carrusel inferior (cargá tus rutas reales)
   const gallery = [
-    { src: "/img/e3.png", alt: "Egresados 1" },
-    { src: "/img/e1.png", alt: "Egresados 2" },
-    { src: "/img/e2.png", alt: "Egresados 3" },
+        { src: "/img/egre1.png", alt: "Egresados 1" },
+    { src: "/img/egre2.png", alt: "Egresados 2" },
+    { src: "/img/egre3.png", alt: "Egresados 3" },
+    { src: "/img/egre4.png", alt: "Egresados 4" },
+    { src: "/img/egre5.png", alt: "Egresados 5" },
+    { src: "/img/egre6.png", alt: "Egresados 6" }
   ];
   const [gIdx, setGIdx] = useState(0);
   const prevG = () => setGIdx(i => (i - 1 + gallery.length) % gallery.length);
