@@ -35,7 +35,6 @@ function TripCard({ v }) {
         pdfHref = `${API_ORIGIN}${v.pdf_itinerario}`;
     }
   }
-  // -------------------
 
   return (
     <div className="trip-card position-relative p-3 p-md-4">

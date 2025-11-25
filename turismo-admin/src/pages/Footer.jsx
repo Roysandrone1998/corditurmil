@@ -7,22 +7,22 @@ export default function Footer() {
         {/* Íconos sociales */}
         <ul className="footer-social">
           <li>
-            <a className="hs-btn font-helvetica w-200" href="https://wa.me/5493430000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a className="hs-btn font-helvetica w-200" href="http://wa.me/3434662347" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <img src="/img/wspblanco.png" alt="WhatsApp" width="24" height="24" />
             </a>
           </li>
           <li>
-            <a className="hs-btn font-helvetica w-200" href="https://insta" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a className="hs-btn font-helvetica w-200" href="https://www.instagram.com/corditurviajes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <img src="/img/instablanco.png" alt="Instagram" width="24" height="24" />
             </a>
           </li>
           <li>
-            <a className="hs-btn" href="https://face" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a className="hs-btn" href="https://www.facebook.com/corditur.viajes?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <img src="/img/faceblanco.png" alt="Facebook" width="24" height="24" />
             </a>
           </li>
           <li>
-            <a className="hs-btn" href="https://finsta" target="_blank" rel="noopener noreferrer" aria-label="Finstagram">
+            <a className="hs-btn" href="https://www.instagram.com/cordituregresados?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Finstagram">
               <img src="/img/instaceleste.png" alt="Finstagram" width="24" height="24" />
             </a>
           </li>
