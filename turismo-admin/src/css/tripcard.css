@@ -9,6 +9,7 @@
   color: #fff;
   position: relative;
       margin-bottom: 2rem;
+     
 }
 
 /* ===== Etiquetas + “barrita” horizontal incompleta (estilo Figma) ===== */
@@ -217,9 +218,10 @@ html, body { font-family: var(--ff-base); }
   /* layout general */
   .trip-card{
     padding: 16px 14px 44px;
-             width: 350px;
+             width: 340px;
         position: relative;
         left: 18px;         /* deja aire y espacio para el PDF abajo */
+         margin-left: 3px;
   }
 
   /* Header de la tarjeta en dos columnas + línea central */
