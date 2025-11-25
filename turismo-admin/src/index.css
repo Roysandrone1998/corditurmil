@@ -105,7 +105,7 @@ body{
    background-size: auto, auto, 100% 100%; 
    background-position: 
       top left, 
-      calc(100% - 20px) 100px, 
+      calc(100% - 0px) 100px, 
       top left;
    background-attachment: fixed, fixed, fixed;
    background-color: #253C70;

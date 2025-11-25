@@ -14,10 +14,10 @@
     --pat-size: 340px auto;            /* escala del patrón */
 
     /* 3 capas: velo p/ controlar opacidad, patrón repetido y gradiente suave */
-    background-image:
-      linear-gradient(rgba(255,255,255,var(--pat-opacity)),
-                      rgba(255,255,255,var(--pat-opacity))),
-      url("/img/fondo.png"),
+      background-image:
+      url("/img/fondo1.png"), 
+      url("/img/fondo2.png"), 
+      
       linear-gradient(180deg,
         var(--eg1) 0%,
         #05C0DB 10%,
@@ -30,10 +30,13 @@
         var(--eg4) 100%
       );
 
-    background-repeat: repeat, repeat, no-repeat;
-    background-size: auto, var(--pat-size), cover;
-    background-position: 0 0, 0 0, center;
-    background-attachment: fixed, fixed, fixed;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+   background-size: auto, auto, 100% 100%; 
+   background-position: 
+      top left, 
+      calc(100% - 0px) 100px, 
+      top left;
+   background-attachment: fixed, fixed, fixed;
     background-blend-mode: normal, soft-light, normal; /* fusión suave del patrón */
   }
   /* El main NO debe tener fondo propio */
@@ -180,6 +183,10 @@
     padding: .15rem 1.1rem;
         margin-bottom: 5px;
     margin-top: 15px;
+        font-size: 18px;
+
+
+
     font-weight: 800; letter-spacing: .2px;
     background: linear-gradient(180deg, #ffffff, #e9f0ff);
     color: #1b2b5a; text-decoration: none;
