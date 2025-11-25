@@ -153,7 +153,7 @@
     color: #1b2b5a; 
     text-decoration: none; 
     text-transform: uppercase;
-    font-size: 15px; /* Tamaño explícito para ayudar al grosor visual */
+        font-size: 17px; /* Tamaño explícito para ayudar al grosor visual */
     font-weight: 650; /* Extra bold sólido */
     letter-spacing: .5px; /* Un pelín más de aire para que se lea bien en bold */
     border-radius: 12px;
