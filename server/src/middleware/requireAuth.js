@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 
 export default function requireAuth(req, res, next) {
-    // 1. Buscar en la Cookie (usado por /api/auth/me)
+   
     let token = req.cookies?.token;
 
-    // 2. Si no está en la cookie, buscar en el Header Authorization (usado por api.js)
+
     if (!token) {
         const authHeader = req.headers.authorization;
         if (authHeader && authHeader.startsWith('Bearer ')) {

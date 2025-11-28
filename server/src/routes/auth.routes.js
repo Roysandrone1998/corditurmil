@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
       { expiresIn: "1d" }
     );
 
-    // ✅ CORRECCIÓN 2: Configuración de Cookie Multi-Dominio
+
     const isProduction = process.env.NODE_ENV === 'production';
 
     res.cookie("token", token, {
@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000 // 1 día
     });
 
-    // ✅ CORRECCIÓN 3: Devolvemos el token también en el JSON
+    
     // Esto asegura que si la cookie falla, el frontend tenga el token a mano
     return res.json({
       ok: true,

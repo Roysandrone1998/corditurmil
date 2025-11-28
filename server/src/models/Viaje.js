@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const ViajeSchema = new mongoose.Schema({
-  // Título pasa a ser opcional. Si no lo mandás, usaremos el destino.
+
   titulo: { type: String, trim: true },
   destino: { type: String, required: true, trim: true },
 
@@ -9,12 +9,12 @@ const ViajeSchema = new mongoose.Schema({
   precio: Number,
   moneda: { type: String, default: 'ARS' },
 
-  // 👇 nuevos / ajustados
+
   fecha_salida: Date,
   fecha_inicio: Date,
   fecha_fin: Date,
 
-  // 👇 la sección donde va a aparecer
+
   categoria: {
     type: String,
     enum: ['internacional', 'nacional', 'educativos'],
@@ -38,5 +38,5 @@ ViajeSchema.virtual('dias_duracion').get(function () {
   return null;
 });
 
-// Evita OverwriteModelError en recargas
+
 export default mongoose.models.Viaje || mongoose.model('Viaje', ViajeSchema);

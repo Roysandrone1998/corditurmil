@@ -4,7 +4,7 @@ import { connectDB } from './config/db.js'; // Solo una vez
 import User from './models/User.js';
 
 async function main() {
-  // 1. OBTENER ARGUMENTOS
+
   const email = process.argv[2];
   const password = process.argv[3];
 
@@ -14,18 +14,17 @@ async function main() {
   }
 
   try {
-    // 2. CONECTAR A LA BASE DE DATOS (¡ESTO FALTABA!)
+
     console.log('Conectando a la base de datos...');
     await connectDB(); 
 
-    // 3. VERIFICAR SI EXISTE
     const existe = await User.findOne({ email });
     if (existe) {
       console.log('⚠️ Ya existe usuario con ese email');
       process.exit(0);
     }
 
-    // 4. CREAR ADMIN
+
     const passwordHash = await bcrypt.hash(password, 10);
     await User.create({ email, passwordHash, role: 'admin' });
 

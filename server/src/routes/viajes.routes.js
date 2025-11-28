@@ -7,14 +7,14 @@ import Viaje from "../models/Viaje.js";
 
 const router = Router();
 
-// 1. Configuración de Cloudinary (Usa las variables de tu .env)
+
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// 2. Configuración del Storage para Multer
+
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
@@ -41,8 +41,6 @@ const upload = multer({
 });
 
 // ================== RUTAS PÚBLICAS ==================
-
-// GET /api/viajes
 router.get("/", async (req, res) => {
   try {
     const { categoria } = req.query;
@@ -59,9 +57,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ================== RUTAS ADMIN (Protegidas) ==================
+// ================== RUTAS ADMIN ==================
 
-// POST /api/viajes (Crea viaje y sube PDF si existe)
 router.post("/", requireAuth, upload.single("pdf"), async (req, res) => {
   try {
     const {
@@ -100,7 +97,7 @@ router.post("/", requireAuth, upload.single("pdf"), async (req, res) => {
   }
 });
 
-// DELETE /api/viajes/:id (Borra viaje de la BD y PDF de Cloudinary)
+
 router.delete("/:id", requireAuth, async (req, res) => {
   try {
     const { id } = req.params;
@@ -110,21 +107,15 @@ router.delete("/:id", requireAuth, async (req, res) => {
     // Lógica para borrar el PDF de Cloudinary si existe
     if (v.pdf_itinerario) {
       try {
-        // La URL es tipo: .../corditur_pdfs/17325166-miarchivo.pdf
-        // Necesitamos extraer: "corditur_pdfs/17325166-miarchivo"
-        
-        // 1. Obtenemos el nombre del archivo con extensión (ej: 17325166-miarchivo.pdf)
+    
         const nombreArchivo = v.pdf_itinerario.split('/').pop();
         
-        // 2. Quitamos la extensión (Cloudinary a veces duplica extensiones en raw, esto asegura limpieza)
-        // Nota: En 'raw', a veces se necesita el nombre completo, pero normalmente el public_id sin extensión funciona si se configuró así.
-        // Dado que configuramos public_id manual arriba, intentamos borrar usando la carpeta + nombre base.
         const publicId = `corditur_pdfs/${nombreArchivo}`; 
 
         await cloudinary.uploader.destroy(publicId, { resource_type: 'raw' });
       } catch (cloudError) {
         console.error("Error borrando imagen de Cloudinary:", cloudError);
-        // No detenemos el proceso, seguimos para borrar el viaje de la BD
+
       }
     }
 
