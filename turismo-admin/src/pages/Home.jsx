@@ -36,23 +36,34 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Card 2 */}
-    <div className="col-12 col-md-4">
-      <article className="home-card">
-        <div className="home-card-head">
-          <h5 className="font-tommy w-500">EGRESADOS</h5>
-          <p className="font-helvetica w-200">El viaje que nunca se olvida. Diversión,<br/> organización y seguridad garantizadas.</p>
-        </div>
-        <img
-          className="home-card-img"
-          src="/img/home2.png"
-          alt="Viajes de egresados"
-        />
-      </article>
-      <div className="text-center mt-2">
-        <Link to="/egresados" className="btn home-pill font-tommy w-500">CONOCÉ MÁS</Link>
-      </div>
+
+{/* Card 2 */}
+<div className="col-12 col-md-4">
+  <article className="home-card">
+    <div className="home-card-head">
+      <h5 className="font-tommy w-500">EGRESADOS</h5>
+      <p className="font-helvetica w-200">
+        El viaje que nunca se olvida. Diversión,<br/> organización y seguridad garantizadas.
+      </p>
     </div>
+
+
+    <div className="its-fun-badge font-tommy w-500">
+      <img src="/img/itfun.png" alt="¡Es divertido!" width="80" height="30" />
+    </div>
+  
+
+    <img
+      className="home-card-img"
+      src="/img/home2.png"
+      alt="Viajes de egresados"
+    />
+  </article>
+  
+  <div className="text-center mt-2">
+    <Link to="/egresados" className="btn home-pill font-tommy w-500">CONOCÉ MÁS</Link>
+  </div>
+</div>
 
     {/* Card 3 */}
     <div className="col-12 col-md-4">

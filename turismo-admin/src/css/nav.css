@@ -59,7 +59,7 @@
 /* Botón circular que sobresale a la derecha */
 .search-button{
      position: absolute;
-    right: 0px;
+    right: -2px !important;
     top: 50%; transform: translateY(-50%);
     width: 32px;
     height: 32px;
