@@ -40,13 +40,21 @@
   z-index: 1;
 }
 .home-card-head{
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 95px; display: grid; place-items: center; text-align: center;
-  border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.76));
-  border: 1px solid rgba(0,0,0,.06);
-  box-shadow: 0 6px 14px rgba(0,0,0,.12);
-  padding: 8px 12px; z-index: 2;
+     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 115px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #ffffffeb, #ffffffc2);
+    border: 1px solid rgba(0, 0, 0, .06);
+    box-shadow: 0 6px 14px #0000001f;
+    padding: 18px 19px;
+    z-index: 2;
+
 }
 .home-card-head h5{
   margin: 0 0 2px;
@@ -55,7 +63,7 @@
 .home-card-head p{ margin: 0; font-size: .93rem; line-height: 1.2; color: #3A5DAE; }
 .its-fun-badge {
   position: absolute;
-    top: 82px;
+        top: 94px;
     right: -10px;
     background-color: #ffffff;
     width: 33%;
