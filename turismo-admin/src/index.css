@@ -1,327 +1,222 @@
 @font-face{
-   font-family: "Helvetica";
-   src: url("/fonts/Helvetica.ttf") format("truetype");
-   font-weight: 400;
-   font-style: normal;
-   font-display: swap;
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face{
-   font-family: "Helvetica";
-   src: url("/fonts/Helvetica-Bold.ttf") format("truetype");
-   font-weight: 700;
-   font-style: normal;
-   font-display: swap;
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face {
-   font-family: "Helvetica";
-   src: url("/fonts/Helvetica-Light.woff2") format("woff2"),
-           url("/fonts/Helvetica-Light.ttf") format("truetype");
-   font-weight: 200;
-   font-style: normal;
-   font-display: swap;
+    font-family: "Helvetica";
+    src: url("/fonts/Helvetica-Light.woff2") format("woff2"),
+            url("/fonts/Helvetica-Light.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face{
-   font-family: "TommySoft";
-   src: url("/fonts/MADE Tommy Soft Medium PERSONAL USE.otf") format("opentype");
-   font-weight: 650;
-   font-style: normal;
-   font-display: swap;
+    font-family: "TommySoft";
+    src: url("/fonts/MADE Tommy Soft Medium PERSONAL USE.otf") format("opentype");
+    font-weight: 650;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face{
-   font-family: "TommySoft";
-   src: url("/fonts/tommybold.woff2") format("woff2");
-   font-weight: 700;
-   font-style: normal;
-   font-display: swap;
+    font-family: "TommySoft";
+    src: url("/fonts/tommybold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face{
-   font-family: "TommySoft";
-   src: url("/fonts/MADE Tommy Soft ExtraBold PERSONAL USE.otf") format("opentype");
-   font-weight: 800;
-   font-style: normal;
-   font-display: swap;
+    font-family: "TommySoft";
+    src: url("/fonts/MADE Tommy Soft ExtraBold PERSONAL USE.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
 }
 
-:root{
-   --ff-base: "Helvetica", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-   --ff-title: "TommySoft", "Helvetica", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+/* =========================================
+   2. VARIABLES Y RESET
+   ========================================= */
+:root {
+    --ff-base: "Helvetica", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --ff-title: "TommySoft", "Helvetica", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --nav-h: 64px;
+    --max-width: 1200px; /* Ancho máximo para PC */
 }
-html, body { font-family: var(--ff-base); }
 
-.font-helvetica{ font-family: var(--ff-base); }
-.font-tommy{       font-family: var(--ff-title); }
-
-.title-display{
-   font-family: var(--ff-title);
-   font-weight: 700;
-   line-height: .96;
-   letter-spacing: 0;
-   text-transform: uppercase;
-   font-size: clamp(32px, 4.8vw, 80px);
-}
-.helvetica-title{
-   font-family: var(--ff-base);
-   font-weight: 700;
-   line-height: .96;
-   letter-spacing: 0;
-   text-transform: uppercase;
-   font-size: clamp(30px, 3.8vw, 60px);
-}
-.w-200 { font-weight: 200 !important; }
-.w-400{ font-weight:400 !important; }
-.w-500{ font-weight:500 !important; }
-.w-700{ font-weight:700 !important; }
-.w-800{ font-weight:800 !important; }
-.w-600{ font-weight:600 !important; }
-.w-650{ font-weight:650 !important; }
-.w-550{ font-weight:550 !important; }
-:root{
---font-body: "Helvetica", Helvetica, Arial, "Noto Sans", "Segoe UI", system-ui, sans-serif;
-
-   --nav-h: 64px;
+/* Reset agresivo para evitar scrollbars fantasma */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html, body { 
-  min-height: 100dvh; 
-  overflow-x: hidden; 
+    min-height: 100dvh; 
+    overflow-x: hidden; /* Vital para responsive */
+    font-family: var(--ff-base);
+    color: #333; /* Color base por si falla algo */
 }
 
-body{
-   margin: 0;
-
-   background-image:
-      url("/img/fondo1.png"), 
-      url("/img/fondo2.png"), 
-      linear-gradient(
-         to bottom,
-         rgba(123,163,255,1) 0%,
-         rgba(123,163,255,1) 18%,
-         rgba(58,93,174,1) 50%,
-         rgba(58,93,174,1) 82%,
-         rgba(37,60,112,1) 100%
-      );
-
-   background-repeat: no-repeat, no-repeat, no-repeat;
-   background-size: auto, auto, 100% 100%; 
-   background-position: 
-      top left, 
-      calc(100% - 0px) 100px, 
-      top left;
-   background-attachment: fixed, fixed, fixed;
-   background-color: #253C70;
-}
-.app-shell {
-   min-height: 100dvh;
-   display: flex;
-   flex-direction: column;
+/* Imágenes responsive por defecto */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.page {
-  overflow-y: visible;
+/* =========================================
+   3. BACKGROUND GLOBAL (Refactorizado)
+   ========================================= */
+body {
+    background-color: #253C70;
+    
+    /* Capas: Fondo1 (Arriba Izq), Fondo2 (Derecha), Gradiente (Fondo total) */
+    background-image:
+        url("/img/fondo1.png"), 
+        url("/img/fondo2.png"), 
+        linear-gradient(
+            to bottom,
+            rgba(123,163,255,1) 0%,
+            rgba(123,163,255,1) 18%,
+            rgba(58,93,174,1) 50%,
+            rgba(58,93,174,1) 82%,
+            rgba(37,60,112,1) 100%
+        );
+
+    background-repeat: no-repeat;
+    
+    /* POSICIONAMIENTO RESPONSIVE:
+       En vez de calc() complejos, usamos keywords.
+       fondo1: top left
+       fondo2: top right (con un pequeño offset si quieres, o directamente right)
+       gradiente: cover
+    */
+    background-position: 
+        left top, 
+        right 100px, /* Ajusta verticalmente si necesitas, 'right' lo pega a la derecha */
+        center center;
+
+    background-attachment: fixed; /* Ojo: en iOS Safari el 'fixed' a veces falla, si ves glitch, quita esta línea */
+    
+    /* TAMAÑOS:
+       En PC las imágenes decorativas tienen tamaño natural (auto).
+       El gradiente ocupa todo (100% 100%).
+    */
+    background-size: auto, auto, 100% 100%;
 }
 
+/* =========================================
+   4. CLASES DE UTILIDAD (Tipografía)
+   ========================================= */
+.font-helvetica { font-family: var(--ff-base); }
+.font-tommy { font-family: var(--ff-title); }
 
-.main-content {
-   padding-top: var(--nav-h);
-}
-.home-hero h1 {
-   font-family: var(--ff-title);
-   font-weight: 400 !important; 
-   line-height: 1.15;
-   letter-spacing: 0.5px;
-   -webkit-font-smoothing: antialiased;
-   text-rendering: optimizeLegibility;
-   color: #fff; 
-}
-
-.home-hero p {
-   font-family: var(--ff-base);
-   font-weight: 400;
-   line-height: 1.4;
-   font-size: 1.1rem;
-   color: #f5f5f5;}
-.py-4 {
-  padding-top: 0 !important;
-   padding-bottom: 0!important;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box !important;
-}
-
-@media (max-width: 768px) {
-   @font-face{
-   font-family: "Helvetica";
-   src: url("/fonts/Helvetica.ttf") format("truetype");
-   font-weight: 400;
-   font-style: normal;
-   font-display: swap;
-}
-@font-face{
-   font-family: "Helvetica";
-   src: url("/fonts/Helvetica-Bold.ttf") format("truetype");
-   font-weight: 700;
-   font-style: normal;
-   font-display: swap;
-}
-@font-face {
-   font-family: "Helvetica";
-   src: url("/fonts/Helvetica-Light.woff2") format("woff2"),
-           url("/fonts/Helvetica-Light.ttf") format("truetype");
-   font-weight: 200;
-   font-style: normal;
-   font-display: swap;
-}
-@font-face{
-   font-family: "TommySoft";
-   src: url("/fonts/MADE Tommy Soft Medium PERSONAL USE.otf") format("opentype");
-   font-weight: 650;
-   font-style: normal;
-   font-display: swap;
-}
-@font-face{
-   font-family: "TommySoft";
-   src: url("/fonts/tommybold.woff2") format("woff2");
-   font-weight: 700;
-   font-style: normal;
-   font-display: swap;
-}
-@font-face{
-   font-family: "TommySoft";
-   src: url("/fonts/MADE Tommy Soft ExtraBold PERSONAL USE.otf") format("opentype");
-   font-weight: 800;
-   font-style: normal;
-   font-display: swap;
-}
-
-:root{
-   --ff-base: "Helvetica", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-   --ff-title: "TommySoft", "Helvetica", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-}
-html, body { font-family: var(--ff-base); }
-
-.font-helvetica{ font-family: var(--ff-base); }
-.font-tommy{       font-family: var(--ff-title); }
-
-.title-display{
-   font-family: var(--ff-title);
-   font-weight: 700;
-   line-height: .96;
-   letter-spacing: 0;
-   text-transform: uppercase;
-   font-size: clamp(32px, 4.8vw, 80px);
-}
-.helvetica-title{
-   font-family: var(--ff-base);
-   font-weight: 700;
-   line-height: .96;
-   letter-spacing: 0;
-   text-transform: uppercase;
-   font-size: clamp(30px, 3.8vw, 60px);
-}
+/* Clases de peso (prefiero evitar !important, pero si lo necesitas para overrides rápidos, ok) */
 .w-200 { font-weight: 200 !important; }
-.w-400{ font-weight:400 !important; }
-.w-500{ font-weight:500 !important; }
-.w-700{ font-weight:700 !important; }
-.w-800{ font-weight:800 !important; }
-.w-600{ font-weight:600 !important; }
-.w-650{ font-weight:650 !important; }
-.w-550{ font-weight:550 !important; }
-:root{
-     --font-body: "Helvetica", Helvetica, Arial, "Noto Sans", "Segoe UI", system-ui, sans-serif;
+.w-400 { font-weight: 400 !important; }
+.w-500 { font-weight: 500 !important; }
+.w-550 { font-weight: 550 !important; }
+.w-600 { font-weight: 600 !important; }
+.w-650 { font-weight: 650 !important; }
+.w-700 { font-weight: 700 !important; }
+.w-800 { font-weight: 800 !important; }
 
-   --nav-h: 64px;
+/* Títulos Responsive con Clamp */
+.title-display {
+    font-family: var(--ff-title);
+    font-weight: 700;
+    line-height: 0.96;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    /* Clamp: Mínimo 32px, Ideal 4.8% del ancho, Máximo 80px */
+    font-size: clamp(32px, 5vw, 80px); 
 }
 
-html, body { 
-  min-height: 100dvh; 
-  overflow-x: hidden; 
+.helvetica-title {
+    font-family: var(--ff-base);
+    font-weight: 700;
+    line-height: 0.96;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-size: clamp(28px, 4vw, 60px); /* Ajusté un poco el mínimo para celulares pequeños */
 }
 
-body{
-   margin: 0;
+/* =========================================
+   5. ESTRUCTURA LAYOUT (LO NUEVO)
+   ========================================= */
 
-   background-image:
-      url("/img/fondo1.png"), 
-      url("/img/fondo2.png"), 
-      linear-gradient(
-         to bottom,
-         rgba(123,163,255,1) 0%,
-         rgba(123,163,255,1) 18%,
-         rgba(58,93,174,1) 50%,
-         rgba(58,93,174,1) 82%,
-         rgba(37,60,112,1) 100%
-      );
-
-   background-repeat: no-repeat, no-repeat, no-repeat;
-   background-size: auto, auto, 100% 100%; 
-   background-position: 
-      top left, 
-      calc(100% - 20px) 100px, 
-      top left;
-   background-attachment: fixed, fixed, fixed;
-   background-color: #253C70;
+/* Esta es la clase mágica para que no se desmadre en pantallas grandes */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Margen seguro a los costados en celular */
 }
+
 .app-shell {
-   min-height: 100dvh;
-   display: flex;
-   flex-direction: column;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    padding-top: var(--nav-h);
+    flex: 1; /* Esto hace que el footer se vaya al fondo si hay poco contenido */
 }
 
 .page {
-  overflow-y: visible;
+    overflow-y: visible;
+    width: 100%;
 }
 
-
-.main-content {
-   padding-top: var(--nav-h);
-}
+/* =========================================
+   6. ESTILOS ESPECÍFICOS (Home Hero)
+   ========================================= */
 .home-hero h1 {
-   font-family: var(--ff-title);
-   font-weight: 400 !important; 
-   line-height: 1.15;
-   letter-spacing: 0.5px;
-   -webkit-font-smoothing: antialiased;
-   text-rendering: optimizeLegibility;
-   color: #fff; 
+    font-family: var(--ff-title);
+    font-weight: 400 !important; 
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+    color: #fff; 
 }
 
 .home-hero p {
-   font-family: var(--ff-base);
-   font-weight: 400;
-   line-height: 1;
-   font-size: 1.1rem;
-   color: #f5f5f5;}
+    font-family: var(--ff-base);
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: clamp(1rem, 1.1rem, 1.25rem); /* Hice responsive el texto del párrafo también */
+    color: #f5f5f5;
+}
+
 .py-4 {
-  padding-top: 0 !important;
-   padding-bottom: 0!important;
+    padding-top: 2rem !important; /* Demos espacio real, 0 queda muy pegado */
+    padding-bottom: 2rem !important;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box !important;
-}
-
+/* =========================================
+   7. MEDIA QUERIES (Solo ajustes de layout)
+   ========================================= */
 @media (max-width: 768px) {
-   body {
-
-         background-image:
-            url("/img/fondo1.png"),
-            url("/img/fondo2.png"),
-            linear-gradient(
-                  to bottom,
-                  rgba(123,163,255,1) 0%,
-                  rgba(123,163,255,1) 18%,
-                  rgba(58,93,174,1) 50%,
-                  rgba(58,93,174,1) 82%,
-                  rgba(37,60,112,1) 100%
-            );
-        background-size: 320px auto, 150px auto, 100% 100%;
-        background-position:
-            0px 0px,
-            bottom right,
-            top left;
-        background-repeat: no-repeat, no-repeat, no-repeat;
-        background-attachment: fixed, fixed, fixed;
+    /* Ajustamos el fondo para móviles para que no molesten las imágenes decorativas */
+    body {
+        background-size: 200px auto, 120px auto, 100% 100%; /* Hacemos las imágenes decorativas más chicas */
+        background-position: 
+            left top,           /* Fondo 1 */
+            right 150px,        /* Fondo 2 (ajustado verticalmente) */
+            center center;      /* Gradiente */
     }
 
-}}
+    /* Reducimos el padding del container para aprovechar más pantalla en el cel */
+    .container {
+        padding: 0 1rem;
+    }
+}
