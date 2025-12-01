@@ -1,6 +1,4 @@
 .trip-card {
-    position: relative;
-    width: 100%; /* Ocupa el ancho que le de la grilla padre */
     background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
     border: 1px solid rgba(255,255,255,0.35);
     border-radius: 18px;
@@ -8,202 +6,165 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: #fff;
+    position: relative;
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    
-    /* Transición suave al cambiar tamaño */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.trip-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 32px rgba(0,0,0,0.22);
-}
-
-/* =========================================
-   LAYOUT INTERNO (GRID SYSTEM)
-   ========================================= */
-.trip-grid-layout {
-    display: grid;
-    /* Mobile First: 2 columnas arriba, 1 fila abajo */
-    grid-template-columns: 1fr 1fr; 
-    grid-template-areas: 
-        "dest date"
-        "desc desc";
-    gap: 1.5rem 1rem; /* Gap vertical 1.5rem, horizontal 1rem */
-    align-items: center;
-}
-
-/* Asignación de áreas */
-.destino-area { grid-area: dest; text-align: center; }
-.fecha-area   { grid-area: date; text-align: center; position: relative; }
-.desc-area    { grid-area: desc; text-align: center; }
-
-/* Separador vertical en Mobile (entre Destino y Fecha) */
-.fecha-area::before {
-    content: "";
-    position: absolute;
-    left: 0; /* Al inicio de la columna fecha */
-    top: 10%;
-    bottom: 10%;
-    width: 1px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.4), rgba(255,255,255,0));
-}
-
-/* =========================================
-   TIPOGRAFÍA Y ETIQUETAS
-   ========================================= */
 .trip-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    opacity: 0.8;
-    margin-bottom: 0.25rem;
-    text-transform: uppercase;
+    position: relative;
+    padding-right: 8px;
 }
 
-.trip-destino {
-    font-size: 1.5rem;
-    font-weight: 800;
-    line-height: 1.1;
+@media (min-width: 768px) {
+    .trip-label::after {
+        content: "";
+        position: absolute;
+        top: 113%;
+        transform: translateY(-50%);
+        right: 28px;
+        width: 1px;
+        height: 66px;
+        background: linear-gradient(90deg, rgba(255,255,255,.38) 0%, rgba(255,255,255,.25) 70%, rgba(255,255,255,0) 100%);
+    }
 }
 
-.trip-fecha {
-    font-size: 1.1rem;
-    font-weight: 700;
+.trip-destino { font-size: 1.6rem; font-weight: 800; line-height: 1.1; }
+.trip-fecha { font-size: 1.1rem; font-weight: 700; }
+.trip-desc { font-size: .95rem; opacity: .95; }
+
+@media (min-width: 768px) {
+    .trip-col { position: relative; padding-left: 18px; padding-right: 18px; }
+    .trip-col + .trip-col::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 10px; bottom: 10px;
+        width: 1px;
+        background: linear-gradient(to bottom, rgba(255,255,255,.0) 0%, rgba(255,255,255,.28) 18%, rgba(255,255,255,.28) 82%, rgba(255,255,255,.0) 100%);
+    }
 }
 
-.trip-desc {
-    font-size: 0.95rem;
-    opacity: 0.95;
-    line-height: 1.4;
-    max-width: 90%; /* Para que no sea muy ancho el texto en mobile */
-    margin: 0 auto;
-}
-
-/* =========================================
-   BOTONES FLOTANTES
-   ========================================= */
-/* Acciones (Whatsapp) */
 .trip-actions {
     position: absolute;
     top: -14px;
-    right: 10px;
-    z-index: 10;
+    right: -2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
 }
 
 .trip-cta {
-    display: inline-flex;
-    align-items: center;
     padding: 6px 14px;
     border-radius: 999px;
     font-weight: 700;
     text-decoration: none;
-    background: #fff;
-    color: #194BDA;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-    font-size: 0.75rem;
-    white-space: nowrap; /* Evita que el texto se rompa */
+    transition: all .2s ease;
+    background: rgba(255, 255, 255, 1) !important;
+    color: #194BDA !important;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,.18);
 }
 
-.trip-cta .ico {
-    margin-left: 8px;
-    width: 16px;
-    height: auto;
+.ico {
+    padding-left: 14px;
+    margin-top: -4px;
+    width: 34px;
+    height: 21px;
+    display: inline-flex;
+    margin-right: 5px;
 }
 
-.trip-cta.disabled {
-    pointer-events: none;
-    opacity: 0.6;
-}
-
-/* PDF Button */
 .trip-pdf {
     position: absolute;
-    bottom: -12px;
-    right: 0;
-    background: #A1BEFF;
-    color: #3A5DAE;
-    font-size: 0.7rem;
-    font-weight: 700;
+    right: -2px;
+    bottom: -14px;
     padding: 6px 16px;
-    border-radius: 999px 0 0 999px; /* Forma de pestaña */
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 10;
+    border-width: 0;
+    background: #A1BEFF !important;
+    color: #3A5DAE !important;
+    z-index: 20;
 }
 
-/* =========================================
-   DESKTOP (PC) - CAMBIO DE LAYOUT
-   ========================================= */
-@media (min-width: 768px) {
+/* =========================================================
+   RESPONSIVE MOBILE (CORREGIDO PARA ADAPTARSE, NO CAMBIAR DISEÑO)
+   ========================================================= */
+@media (max-width: 767.98px) {
+    /* 1. Layout General: Quitamos width fijo y left fijo */
     .trip-card {
-        padding: 2rem; /* Más aire en PC */
+        padding: 16px 14px 44px;
+        width: 100%;       /* Ocupa el ancho del contenedor padre */
+        position: relative;
+        /* Quitamos el left: 18px y usamos margin para centrar si hace falta */
+        margin: 0 auto 2rem auto; 
     }
 
-    /* Cambiamos el Grid a 3 columnas en línea */
-    .trip-grid-layout {
-        grid-template-columns: 1.2fr 0.8fr 2fr; /* Proporciones ajustadas */
-        grid-template-areas: "dest date desc";
-        gap: 2rem;
-        text-align: left; /* Alineación a la izquierda en PC */
-    }
-
-    /* Reseteamos alineaciones */
-    .destino-area, .fecha-area, .desc-area {
-        text-align: left;
-    }
-    
-    .desc-area {
-        margin: 0;
-        max-width: 100%;
-    }
-
-    /* Decoración de la etiqueta DESTINO (Barrita lateral) */
-    .destino-area .trip-label::after {
-        content: "";
-        display: inline-block;
-        width: 40px;
-        height: 1px;
-        background: rgba(255,255,255,0.4);
-        vertical-align: middle;
-        margin-left: 10px;
-    }
-
-    /* Separador vertical entre columnas (PC) */
-    .fecha-area::before {
-        /* Movemos el separador a la izquierda de la fecha */
-        left: -1rem; 
-        top: 0;
-        bottom: 0;
-        background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.3), rgba(255,255,255,0));
-    }
-    
-    /* Separador extra para descripción */
-    .desc-area {
+    /* 2. Header de la tarjeta */
+    .trip-card .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 12px;
+        column-gap: 22px;
+        align-items: center;
         position: relative;
     }
-    .desc-area::before {
+
+    /* Línea vertical central */
+    .trip-card .row::before {
         content: "";
         position: absolute;
-        left: -1rem;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.3), rgba(255,255,255,0));
+        left: 50%;
+        transform: translateX(-50%);
+        top: 12px;
+        height: 75px;
+        width: 1.5px;
+        background: linear-gradient(to bottom, rgba(230, 6, 6, 0) 0%, rgba(255,255,255,.35) 18%, rgba(255,255,255,.35) 82%, rgba(255,255,255,0) 100%);
+        pointer-events: none;
     }
 
-    /* Ajuste botones PC */
-    .trip-actions {
-        top: -16px;
-        right: -10px;
+    .trip-card .row > div:nth-child(1) { grid-column: 1; text-align: center; }
+    .trip-card .row > div:nth-child(2) { grid-column: 2; text-align: center; }
+    .trip-card .row > div:nth-child(3) { grid-column: 1 / -1; text-align: center; padding-top: 8px; }
+
+    /* Tipografías y ajustes visuales */
+    .trip-label {
+        margin-top: 10px;
+        position: relative;
+        font-size: .72rem;
+        letter-spacing: .08em;
+        opacity: .9;
     }
-    .trip-cta {
-        font-size: 0.85rem;
-        padding: 8px 18px;
+    .trip-label::after { display: none !important; }
+
+    .trip-destino { font-size: 1.35rem; line-height: 1.15; }
+    .trip-fecha { font-size: 1rem; }
+    .trip-desc {
+        font-size: .96rem;
+        line-height: 1.35;
+        max-width: 36ch; /* Ancho de lectura cómodo */
+        margin: 0 auto;
+        opacity: .95;
     }
+
+    .trip-col::before { display: none !important; }
+
+    .trip-actions { top: -10px; right: 8px; gap: 8px; }
+    .trip-cta { margin-right: -10px; padding: 4px 10px; font-size: 0.72rem; }
+    .trip-cta .ico { width: 16px; height: 16px; }
+    
+    .ico {
+        padding-left: 0px;
+        margin-top: -3px;
+        width: 40px;
+        height: 21px;
+        display: inline-flex;
+        margin-right: -6px;
+        margin-left: 7px;
+    }
+
     .trip-pdf {
-        border-radius: 999px; /* Redondo completo en PC */
-        right: 20px;
-        bottom: -14px;
+        font-size: 0.72rem !important;
+        right: -2px;
+        bottom: -12px;
+        padding: 6px 14px;
     }
 }
