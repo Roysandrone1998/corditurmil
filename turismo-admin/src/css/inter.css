@@ -71,24 +71,40 @@
    ========================================================= */
 @media (max-width: 991.98px) {
     .cr-wrap {
-        width: 100%; /* Usar el ancho completo disponible */
+        width: 100%;
         max-width: 100%;
-        padding-inline: 0; /* Quitamos padding forzado */
+        padding-inline: 0;
         margin-inline: auto;
+        display: flex;
+        justify-content: center;
     }
     
-    .cr { margin-inline: 0; } /* Reseteamos margen negativo que rompe mobile */
+    .cr { margin-inline: 0; }
 
+    .cr-card {
+        /* Aquí corregimos el tamaño chico: */
+        width: 94vw;      /* Ocupa el 94% de la pantalla */
+        max-width: 450px; /* Limite para tablets */
+        margin: 0 auto;
+        left: 0;
+    }
+
+    /* Forzamos altura para que la foto se vea GRANDE */
+    .cr-img { 
+        height: 400px !important; 
+        object-fit: cover;
+    }
+
+    /* Flechas ajustadas a este nuevo tamaño */
     .cr-arrow {
-        width: 44px; height: 44px;
+        width: 40px; height: 40px;
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+        z-index: 50;
     }
     
-    /* Flechas visibles dentro de la pantalla */
-    .cr-prev-out { left: 10px; }
-    .cr-next-out { right: 10px; }
+    .cr-prev-out { left: 2vw; }  /* Pegaditas al borde visual */
+    .cr-next-out { right: 2vw; }
 
-    .cr-img { height: var(--cr-height-sm, 360px); }
     .inter-hero :is(h1) { font-size: 2.5rem; line-height: 1.3; }
 }
 
@@ -98,15 +114,8 @@ html, body { overflow-x: hidden; }
     .inter-hero h1 { font-size: 2rem !important; line-height: 1; margin-bottom: 1rem; }
     .inter-hero p { padding-left: 20px; padding-right: 20px; font-size: 0.8rem !important; line-height: 1.2 !important; margin: 0; }
     
-    .cr-card {
-        position: relative;
-        width: 100%; /* Ancho fluido */
-        left: 0;     /* ELIMINADO EL LEFT FIJO QUE ROMPÍA EL CENTRADO */
-    }
-
-    /* Flechas ajustadas para no tapar tanto */
-    .cr-next-out { right: 5px; }
-    .cr-prev-out { left: 5px; }
+    /* Pequeño ajuste extra para celulares muy angostos */
+    .cr-card { width: 92vw; } 
 
     .h2inter { font-size: 1.8rem!important; }
     .pinter { font-size: 0.8rem !important; padding-left: 27px; padding-right: 27px; }
