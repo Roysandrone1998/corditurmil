@@ -90,83 +90,39 @@
    ========================================================= */
 @media (max-width: 767.98px) {
     /* 1. Layout: Usamos VW para que ocupe el 92% de la pantalla real */
+@media (max-width: 768px) {
     .trip-card {
-        padding: 16px 14px 44px;
-        width: 92vw;       /* <--- ESTO ES CLAVE */
-        max-width: 450px;  /* Para que no se deforme en tablets chicas */
-        position: relative;
-        margin: 0 auto 2rem auto; /* Centrado automático */
-        left: 0; 
+        /* ESTO ES LO IMPORTANTE: */
+        width: 95vw !important; /* Ocupa el 95% de la pantalla real */
+        max-width: none !important; /* Ignora límites anteriores */
+        margin: 0 auto 2rem auto !important; /* Se centra automáticamente */
+        left: 0 !important; /* Resetea posiciones raras */
+        right: 0 !important;
+        
+        padding: 1.5rem 1rem 3rem !important;
     }
 
-    /* 2. Grid interno */
+    /* Acomodamos el contenido interno para que no se rompa */
     .trip-card .row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: 12px;
-        column-gap: 22px;
-        align-items: center;
-        position: relative;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Dos columnas arriba */
+        gap: 15px !important;
+        width: 100% !important;
+        margin: 0 !important;
     }
 
-    /* Línea vertical central */
-    .trip-card .row::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 12px;
-        height: 75px;
-        width: 1.5px;
-        background: linear-gradient(to bottom, rgba(230, 6, 6, 0) 0%, rgba(255,255,255,.35) 18%, rgba(255,255,255,.35) 82%, rgba(255,255,255,0) 100%);
-        pointer-events: none;
+    /* La descripción pasa abajo ocupando todo el ancho */
+    .trip-card .row > div:nth-child(3) {
+        grid-column: 1 / -1 !important;
+        margin-top: 10px !important;
+        text-align: center !important;
     }
-
-    .trip-card .row > div:nth-child(1) { grid-column: 1; text-align: center; }
-    .trip-card .row > div:nth-child(2) { grid-column: 2; text-align: center; }
-    .trip-card .row > div:nth-child(3) { grid-column: 1 / -1; text-align: center; padding-top: 8px; }
-
-    /* Estilos de texto */
-    .trip-label {
-        margin-top: 10px;
-        position: relative;
-        font-size: .72rem;
-        letter-spacing: .08em;
-        opacity: .9;
-    }
-    .trip-label::after { display: none !important; }
-
-    .trip-destino { font-size: 1.35rem; line-height: 1.15; }
-    .trip-fecha { font-size: 1rem; }
-    .trip-desc {
-        font-size: .96rem;
-        line-height: 1.35;
-        max-width: 36ch;
-        margin: 0 auto;
-        opacity: .95;
-    }
-
-    .trip-col::before { display: none !important; }
-
-    /* Ajuste de botones para que no se corten */
-    .trip-actions { top: -12px; right: 0; gap: 8px; }
-    .trip-cta { margin-right: 0; padding: 4px 12px; font-size: 0.72rem; }
-    .trip-cta .ico { width: 16px; height: 16px; }
     
-    .ico {
-        padding-left: 0px;
-        margin-top: -3px;
-        width: 40px;
-        height: 21px;
-        display: inline-flex;
-        margin-right: -6px;
-        margin-left: 7px;
-    }
-
-    .trip-pdf {
-        font-size: 0.72rem !important;
-        right: 0;
-        bottom: -12px;
-        padding: 6px 14px;
-    }
-}
+    /* Textos legibles */
+    .trip-destino { font-size: 1.4rem !important; }
+    .trip-fecha { font-size: 1rem !important; }
+    
+    /* Botones en su lugar */
+    .trip-actions { top: -10px !important; right: 5px !important; }
+    .trip-pdf { bottom: -10px !important; right: 0 !important; width: auto !important; }
+}}
