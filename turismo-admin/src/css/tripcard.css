@@ -86,19 +86,21 @@
 }
 
 /* =========================================================
-   RESPONSIVE MOBILE (CORREGIDO PARA ADAPTARSE, NO CAMBIAR DISEÑO)
+   RESPONSIVE MOBILE (CAMBIOS PARA QUE SE VEA GRANDE)
    ========================================================= */
 @media (max-width: 767.98px) {
-    /* 1. Layout General: Quitamos width fijo y left fijo */
-  .trip-card {
+    /* 1. Layout: Usamos VW para que ocupe el 92% de la pantalla real */
+    .trip-card {
         padding: 16px 14px 44px;
         width: 92vw;       /* <--- ESTO ES CLAVE */
         max-width: 450px;  /* Para que no se deforme en tablets chicas */
         position: relative;
         margin: 0 auto 2rem auto; /* Centrado automático */
-        left: 0;}
+        left: 0; 
+    }
 
-  .trip-card .row {
+    /* 2. Grid interno */
+    .trip-card .row {
         display: grid;
         grid-template-columns: 1fr 1fr;
         row-gap: 12px;
