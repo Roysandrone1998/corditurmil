@@ -438,14 +438,6 @@ html, body { font-family: var(--ff-base); }
 
     padding: 16px 14px 44px;
 
-             width: 338px;
-
-        position: relative;
-
-        left: 18px;         /* deja aire y espacio para el PDF abajo */
-
-         margin-left: 3px;
-
   }
 
 
@@ -623,5 +615,10 @@ html, body { font-family: var(--ff-base); }
    
 
   }
-
+    .trip-card {
+        padding: 16px 14px 44px;
+        width: 100%;
+        position: relative;
+      
+    }
 }

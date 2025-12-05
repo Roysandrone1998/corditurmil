@@ -42,7 +42,7 @@ function TripCard({ v }) {
 
   return (
 
-    <div className="trip-card position-relative p-3 p-md-4">
+    <div className="trip-card position-relative">
       {/* Acciones arriba derecha */}
       <div className="trip-actions">
         <a
