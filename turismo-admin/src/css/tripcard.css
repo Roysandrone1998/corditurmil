@@ -1,128 +1,627 @@
-.trip-card {
-    background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-    border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 18px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #fff;
-    position: relative;
-    margin-bottom: 2rem;
+/* ===== Card con efecto vidrio ===== */
+
+.trip-card{
+
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  color: #fff;
+
+  position: relative;
+
+      margin-bottom: 2rem;
+
+     
+
 }
 
-.trip-label {
-    position: relative;
-    padding-right: 8px;
+
+
+/* ===== Etiquetas + “barrita” horizontal incompleta (estilo Figma) ===== */
+
+.trip-label{
+
+  position: relative;
+
+ 
+
+  padding-right: 8px;
+
 }
 
-@media (min-width: 768px) {
-    .trip-label::after {
-        content: "";
-        position: absolute;
-        top: 113%;
-        transform: translateY(-50%);
-        right: 28px;
-        width: 1px;
-        height: 66px;
-        background: linear-gradient(90deg, rgba(255,255,255,.38) 0%, rgba(255,255,255,.25) 70%, rgba(255,255,255,0) 100%);
-    }
-}
 
-.trip-destino { font-size: 1.6rem; font-weight: 800; line-height: 1.1; }
-.trip-fecha { font-size: 1.1rem; font-weight: 700; }
-.trip-desc { font-size: .95rem; opacity: .95; }
 
-@media (min-width: 768px) {
-    .trip-col { position: relative; padding-left: 18px; padding-right: 18px; }
-    .trip-col + .trip-col::before {
-        content: "";
-        position: absolute;
-        left: 0; top: 10px; bottom: 10px;
-        width: 1px;
-        background: linear-gradient(to bottom, rgba(255,255,255,.0) 0%, rgba(255,255,255,.28) 18%, rgba(255,255,255,.28) 82%, rgba(255,255,255,.0) 100%);
-    }
-}
+/* La barrita sale desde la mitad de la etiqueta hacia la derecha */
 
-.trip-actions {
+/* En mobile la ocultamos para que no ensucie */
+
+@media (min-width: 768px){
+
+  .trip-label::after{
+
+    content: "";
+
     position: absolute;
-    top: -14px;
-    right: -2px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 5;
+
+    top: 113%;
+
+    transform: translateY(-50%);
+
+    /* ancho parcial, no llega al borde */
+
+    right: 28px;
+
+    width: 1px;
+
+    height: 66px;
+
+    /* leve degradé para que “muera” a la derecha */
+
+    background: linear-gradient(90deg,
+
+      rgba(255,255,255,.38) 0%,
+
+      rgba(255,255,255,.25) 70%,
+
+      rgba(255,255,255,0) 100%);
+
+  }
+
 }
 
-.trip-cta {
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all .2s ease;
-    background: rgba(255, 255, 255, 1) !important;
-    color: #194BDA !important;
-    border: none;
-    box-shadow: 0 6px 16px rgba(0,0,0,.18);
+
+
+/* ===== Contenidos ===== */
+
+.trip-destino{
+
+  font-size: 1.6rem;
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
 }
 
-.ico {
+.trip-fecha{
+
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+}
+
+.trip-desc{
+
+  font-size: .95rem;
+
+  opacity: .95;
+
+}
+
+
+
+/* Separadores verticales suaves entre columnas en >= md */
+
+@media (min-width: 768px){
+
+  .trip-col{ position: relative; padding-left: 18px; padding-right: 18px; }
+
+  .trip-col + .trip-col::before{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0; top: 10px; bottom: 10px;
+
+    width: 1px;
+
+    background: linear-gradient(
+
+      to bottom,
+
+      rgba(255,255,255,.0) 0%,
+
+      rgba(255,255,255,.28) 18%,
+
+      rgba(255,255,255,.28) 82%,
+
+      rgba(255,255,255,.0) 100%
+
+    );
+
+  }
+
+}
+
+
+
+/* ===== Acciones arriba derecha ===== */
+
+.trip-actions{
+
+  position: absolute;
+
+  top: -14px;              /* flota por encima como en el Figma */
+
+  right: -2px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  z-index: 5;
+
+}
+
+
+
+/* Estilo “ghost”: más link, menos pastilla cargada */
+
+.trip-cta{
+
+  padding: 6px 14px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: all .2s ease;
+
+  background: rgba(255, 255, 255, 1) !important;              /* fallback por si querés la versión sólida */
+
+  color: #194BDA !important;
+
+  border: none;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+
+}
+
+.trip-cta.ghost{
+
+  background: rgba(255, 255, 255, 1) !important;              /* fallback por si querés la versión sólida */
+
+  color: #194BDA !important;
+
+  border: 1px solid rgba(255,255,255,.65);
+
+  box-shadow: none;
+
+}
+
+
+
+
+
+.ico{
+
     padding-left: 14px;
+
     margin-top: -4px;
+
+
+
     width: 34px;
+
     height: 21px;
+
     display: inline-flex;
+
     margin-right: 5px;
+
 }
 
-.trip-pdf {
-    position: absolute;
-    right: -2px;
+
+
+.trip-cta.disabled,
+
+.trip-wsp.disabled{
+
+  pointer-events: none;
+
+  opacity: .6;
+
+}
+
+
+
+/* ===== Botón PDF/Itinerario ===== */
+
+.trip-pdf{
+
+  position: absolute;
+
+right: -2px;
+
     bottom: -14px;
-    padding: 6px 16px;
-    border-width: 0;
-    background: #A1BEFF !important;
-    color: #3A5DAE !important;
-    z-index: 20;
+
+  padding: 6px 16px;
+
+  border-width: 0;
+
+  background:#A1BEFF !important;
+
+  color: #3A5DAE !important;
+
+
+
+  z-index: 20;
+
 }
 
-/* =========================================================
-   RESPONSIVE MOBILE (CAMBIOS PARA QUE SE VEA GRANDE)
-   ========================================================= */
-@media (max-width: 767.98px) {
-    /* 1. Layout: Usamos VW para que ocupe el 92% de la pantalla real */
-@media (max-width: 768px) {
-    .trip-card {
-        /* ESTO ES LO IMPORTANTE: */
-        width: 95vw !important; /* Ocupa el 95% de la pantalla real */
-        max-width: none !important; /* Ignora límites anteriores */
-        margin: 0 auto 2rem auto !important; /* Se centra automáticamente */
-        left: 0 !important; /* Resetea posiciones raras */
-        right: 0 !important;
-        
-        padding: 1.5rem 1rem 3rem !important;
-    }
 
-    /* Acomodamos el contenido interno para que no se rompa */
-    .trip-card .row {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* Dos columnas arriba */
-        gap: 15px !important;
-        width: 100% !important;
-        margin: 0 !important;
-    }
 
-    /* La descripción pasa abajo ocupando todo el ancho */
-    .trip-card .row > div:nth-child(3) {
-        grid-column: 1 / -1 !important;
-        margin-top: 10px !important;
-        text-align: center !important;
-    }
-    
-    /* Textos legibles */
-    .trip-destino { font-size: 1.4rem !important; }
-    .trip-fecha { font-size: 1rem !important; }
-    
-    /* Botones en su lugar */
-    .trip-actions { top: -10px !important; right: 5px !important; }
-    .trip-pdf { bottom: -10px !important; right: 0 !important; width: auto !important; }
-}}
+/* ===== Responsive tweaks ===== */
+
+@media (max-width: 767.98px){
+
+  .trip-destino{ font-size: 1.35rem; }
+
+  .trip-fecha{ font-size: 1rem; }
+
+  .trip-actions{ top: -10px; right: 10px; }
+
+}
+
+/* === HELVETICA === */
+
+@font-face{
+
+  font-family: "Helvetica";
+
+  src: url("/fonts/Helvetica.ttf") format("truetype");
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  font-display: swap;
+
+}
+
+@font-face{
+
+  font-family: "Helvetica";
+
+  src: url("/fonts/Helvetica-Bold.ttf") format("truetype");
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  font-display: swap;
+
+}
+
+
+
+/* === TOMMY SOFT === */
+
+/* Medium (OTF) */
+
+@font-face{
+
+  font-family: "TommySoft";
+
+  src: url("/fonts/MADE Tommy Soft Medium PERSONAL USE.otf") format("opentype");
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  font-display: swap;
+
+}
+
+/* Bold (WOFF2) */
+
+@font-face{
+
+  font-family: "TommySoft";
+
+  src: url("/fonts/tommybold.woff2") format("woff2");
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  font-display: swap;
+
+}
+
+/* ExtraBold (OTF) */
+
+@font-face{
+
+  font-family: "TommySoft";
+
+  src: url("/fonts/MADE Tommy Soft ExtraBold PERSONAL USE.otf") format("opentype");
+
+  font-weight: 800;
+
+  font-style: normal;
+
+  font-display: swap;
+
+}
+
+
+
+/* Helpers */
+
+:root{
+
+  --ff-base: "Helvetica", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --ff-title: "TommySoft", "Helvetica", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+}
+
+html, body { font-family: var(--ff-base); }
+
+
+
+.font-helvetica{ font-family: var(--ff-base); }
+
+.font-tommy{     font-family: var(--ff-title); }
+
+
+
+.title-display{
+
+  font-family: var(--ff-title);
+
+  font-weight: 700;
+
+  line-height: .96;
+
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  font-size: clamp(32px, 4.8vw, 80px);
+
+}
+
+.helvetica-title{
+
+  font-family: var(--ff-base);
+
+  font-weight: 700;
+
+  line-height: .96;
+
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  font-size: clamp(30px, 3.8vw, 60px);
+
+}
+
+
+
+:root{
+
+   --font-body: "Helvetica", Helvetica, Arial, "Noto Sans", "Segoe UI", system-ui, sans-serif;
+
+  --deep:#253C70; --mid:#3A5DAE; --light:#7BA3FF;
+
+  --nav-h: 64px; /* altura de la navbar */
+
+}
+
+/* ======== MOBILE (≤ 768px) ======== */
+
+@media (max-width: 767.98px){
+
+
+
+  /* layout general */
+
+  .trip-card{
+
+    padding: 16px 14px 44px;
+
+             width: 338px;
+
+        position: relative;
+
+        left: 18px;         /* deja aire y espacio para el PDF abajo */
+
+         margin-left: 3px;
+
+  }
+
+
+
+  /* Header de la tarjeta en dos columnas + línea central */
+
+  .trip-card .row{
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;  /* 2 columnas en la primera fila */
+
+    row-gap: 12px;
+
+    column-gap: 22px;
+
+    align-items: center;
+
+    position: relative;              /* ancla para la línea vertical */
+
+  }
+
+
+
+  /* Línea vertical entre DESTINO y FECHA */
+
+  .trip-card .row::before{
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%; transform: translateX(-50%);
+
+    top: 12px;                       /* ajustá para clavarla donde te guste */
+
+    height: 75px;                    /* alto de la línea */
+
+    width: 1.5px;
+
+    background: linear-gradient(
+
+      to bottom,
+
+      rgba(230, 6, 6, 0) 0%,
+
+      rgba(255,255,255,.35) 18%,
+
+      rgba(255,255,255,.35) 82%,
+
+      rgba(255,255,255,0) 100%
+
+    );
+
+    pointer-events: none;
+
+  }
+
+
+
+  /* Colocación de las 3 columnas originales dentro del grid */
+
+  .trip-card .row > div:nth-child(1){ grid-column: 1; text-align: center; }
+
+  .trip-card .row > div:nth-child(2){ grid-column: 2; text-align: center; }
+
+  .trip-card .row > div:nth-child(3){ grid-column: 1 / -1; text-align: center; padding-top: 8px; }
+
+
+
+  /* Tipos y jerarquía */
+
+  .trip-label{
+
+            margin-top: 10px;
+
+    position: relative;
+
+    font-size: .72rem;
+
+    letter-spacing: .08em;
+
+    opacity: .9;
+
+  }
+
+  /* en mobile NO usamos la barrita de la etiqueta */
+
+  .trip-label::after{ display: none !important; }
+
+
+
+  .trip-destino{
+
+    font-size: 1.35rem;  /* más grande que el resto, como en Figma */
+
+    line-height: 1.15;
+
+  }
+
+  .trip-fecha{ font-size: 1rem; }
+
+  .trip-desc{
+
+    font-size: .96rem;
+
+    line-height: 1.35;
+
+    max-width: 36ch;                 /* ancho cómodo para leer */
+
+    margin: 0 auto;                  /* centrada */
+
+    opacity: .95;
+
+  }
+
+
+
+  /* Separadores verticales de desktop: apagados en mobile */
+
+  .trip-col::before{ display: none !important; }
+
+
+
+  /* CTA y PDF (posiciones y aspecto) */
+
+  .trip-actions{
+
+    top: -10px;
+
+    right: 8px;
+
+    gap: 8px;
+
+  }
+
+  .trip-cta{ margin-right: -10px;
+
+        padding: 4px 10px;
+
+        font-size: 0.72rem; }
+
+  .trip-cta .ico{ width: 16px; height: 16px; }
+
+.ico{
+
+      padding-left: 0px;
+
+    margin-top: -3px;
+
+    width: 40px;
+
+    height: 21px;
+
+    display: inline-flex
+
+;
+
+    margin-right: -6px;
+
+    margin-left: 7px;
+
+}
+
+  .trip-pdf{
+
+        font-size: 0.72rem !important;
+
+        right: -2px;
+
+        bottom: -12px;
+
+    padding: 6px 14px;
+
+   
+
+  }
+
+}

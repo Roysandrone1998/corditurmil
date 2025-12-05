@@ -128,7 +128,7 @@ html, body { overflow-x: hidden; }
 
     /* 3. La tarjeta de la foto: GRANDE */
     .cr-card {
-        width: 95vw !important; /* 95% de la pantalla */
+        width: 84vw !important; /* 95% de la pantalla */
         margin: 0 auto !important;
         left: 0 !important;
         
