@@ -255,7 +255,8 @@ export default function Navbar() {
             <button className="drawer-close" onClick={() => setOpen(false)} aria-label="Cerrar">×</button>
           </div>
           <ul className="drawer-list font-tommy w-600">
-            {[{ label: "INDIVIDUALES", path: "/individuales" },
+            {[{ label: "INICIO", path: "/" },
+              { label: "INDIVIDUALES", path: "/individuales" },
               { label: "EGRESADOS", path: "/egresados" },
               { label: "EDUCATIVOS", path: "/educativos" },
               { label: "ADMIN", path: "/login" }]

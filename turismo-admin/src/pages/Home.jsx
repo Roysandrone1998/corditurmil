@@ -87,13 +87,13 @@ formativa y divertida.</p>
   </div>
 </section>
 
-    <section className="home-about py-5">
+    <section className="home-about">
   <div className="container">
-    <div className="d-flex align-items-center gap-3 mb-3 home-about-header">
+    <div className="d-flex align-items-center home-about-header">
       <h3 className="font-tommy w-400 ">QUIÉNES SOMOS</h3>
 
       {/* redes (derecha) */}
-      <div className="home-social ms-auto ">
+      <div className="home-social ">
         <a className="hs-btn" href="https://wa.me/5493430000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
   <img src="/img/wspblanco.png" alt="" width="22" height="22" />
   <span className="visually-hidden">WhatsApp</span>

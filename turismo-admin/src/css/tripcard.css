@@ -3,93 +3,50 @@
 .trip-card{
 
   background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-
   border: 1px solid rgba(255,255,255,0.35);
-
+padding: 30px;
   border-radius: 18px;
-
   box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-
   backdrop-filter: blur(8px);
 
   -webkit-backdrop-filter: blur(8px);
-
   color: #fff;
-
   position: relative;
-
       margin-bottom: 2rem;
-
-     
-
 }
-
-
-
 /* ===== Etiquetas + “barrita” horizontal incompleta (estilo Figma) ===== */
 
 .trip-label{
 
   position: relative;
-
- 
-
   padding-right: 8px;
-
 }
-
-
 
 /* La barrita sale desde la mitad de la etiqueta hacia la derecha */
 
 /* En mobile la ocultamos para que no ensucie */
-
 @media (min-width: 768px){
-
   .trip-label::after{
-
     content: "";
-
     position: absolute;
-
     top: 113%;
-
     transform: translateY(-50%);
-
     /* ancho parcial, no llega al borde */
-
     right: 28px;
-
     width: 1px;
-
     height: 66px;
-
     /* leve degradé para que “muera” a la derecha */
-
     background: linear-gradient(90deg,
-
       rgba(255,255,255,.38) 0%,
-
       rgba(255,255,255,.25) 70%,
-
       rgba(255,255,255,0) 100%);
-
   }
-
 }
-
-
-
 /* ===== Contenidos ===== */
-
 .trip-destino{
-
   font-size: 1.6rem;
-
   font-weight: 800;
-
   line-height: 1.1;
-
 }
 
 .trip-fecha{
@@ -611,14 +568,10 @@ html, body { font-family: var(--ff-base); }
         bottom: -12px;
 
     padding: 6px 14px;
-
-   
-
   }
     .trip-card {
         padding: 16px 14px 44px;
         width: 100%;
         position: relative;
-      
     }
 }
