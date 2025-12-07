@@ -309,7 +309,7 @@
   /* Quitamos márgenes raros y aseguramos el ancho */
   width: 100%; 
   margin: 25px 0; 
-  padding: 0 18px; /* Un pequeño respiro lateral para que no toquen los bordes del cel */
+  padding: 0 10px; /* Un pequeño respiro lateral para que no toquen los bordes del cel */
 }
 
 /* Estilo de los botones (Pastillas) */

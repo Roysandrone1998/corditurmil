@@ -170,10 +170,35 @@
     max-width: 280px; /* opcional: limita el ancho máximo en móvil */
     text-align: center;
   }
+  h3{
+font-weight: 400 !important;
+  
+  /* AQUÍ ESTÁ LA MAGIA: 
+     1. clamp(min, ideal, max):
+        - Nunca será más chico que 1.3rem (para que entre en celulares angostos).
+        - Nunca será más grande que 3.5rem (tu tamaño de escritorio).
+        - En el medio, ocupará el 5% del ancho de la pantalla (5vw).
+  */
+  font-size: clamp(1.3rem, 5vw, 3.5rem) !important;
+
+  /* 2. OBLIGAR A UN SOLO RENGLÓN */
+  white-space: nowrap;
+  
+  /* 3. CENTRADO Y ANCHO */
+  text-align: center;
+  width: 100%;       /* Ocupa todo el ancho disponible */
+  display: block;    /* Asegura que tome el ancho */
+  
+  /* Márgenes */
+  margin-bottom: 10px !important;
+  margin-top: 42px !important;
+}
+
+
 }
 h3{
   font-weight: 400 !important;
-font-size: 3.5rem !important;
+font-size: 3.5rem;
     margin-bottom: 10px !important;
     margin-top: 42px !important;
 }
