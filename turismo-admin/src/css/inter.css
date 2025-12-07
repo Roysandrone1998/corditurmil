@@ -111,12 +111,35 @@
 html, body { overflow-x: hidden; }
 @media (max-width: 768px) {
     /* 1. Título del Hero: Tamaño controlado */
-    .inter-hero h1 {
-        font-size: 2.5rem !important; 
-        line-height: 1.1 !important;
-        padding: 0 10px !important;
-    }
+  hero {
+    /* Un poco de aire arriba y abajo para que no quede apretado */
+    padding: 40px 0; 
+  }
 
+  /* TÍTULO */
+  .inter-hero h1 {
+    /* CAMBIO CLAVE: Bajamos de 2.5rem a 1.7rem.
+       Con este tamaño, la frase "¿ESTÁS LISTO PARA TU" entra
+       perfecta en una línea de celular, y tu <br/> hace el resto. */
+    font-size: 1.8rem !important; 
+    
+    line-height: 1.15 !important;
+    margin-bottom: 15px; /* Separación con el párrafo */
+  }
+
+  /* PÁRRAFO */
+  .inter-hero p {
+    font-size: 0.85rem !important; /* Tamaño legible */
+    line-height: 1 !important;    /* Buen espacio entre líneas */
+    
+    /* Márgenes laterales para que el texto no toque el borde del celular */
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    
+    /* Opcional: si querés que el párrafo no sea tan ancho */
+    max-width: 100%; 
+    margin: 0 auto;
+  }
     /* 2. El contenedor del carrusel */
     .cr-wrap {
         width: 100% !important;

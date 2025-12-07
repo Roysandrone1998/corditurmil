@@ -271,7 +271,7 @@
   /* En lugar de 9rem, usamos % para que siempre esté en el "medio visual" de la foto */
   .eg-hero-mid {
      position: absolute;
-     top: 50% !important;      /* Centro vertical */
+     top: 74% !important;      /* Centro vertical */
      left: 50% !important;     /* Centro horizontal */
      transform: translate(-50%, -50%) !important; /* Ajuste fino para centrado perfecto */
      
@@ -288,29 +288,59 @@
   /* 5. CAJITA BLANCA INFERIOR */
   /* En lugar de bottom: -8rem, la pegamos al borde y la empujamos */
   .eg-hero-bottom {
-     position: absolute;
-     bottom: 0 !important;     /* Pegada al borde inferior de la foto */
-     left: 50% !important;
-     
-     /* La bajamos un 60% de su propia altura hacia afuera */
-     transform: translate(-50%, 60%) !important; 
-     
-     width: 90% !important;
-     padding: 15px;
-     font-size: 0.85rem !important;
-     
-     /* Aseguramos que se vea bien */
-     background: rgba(255,255,255,0.85); /* Un poco más sólida para leerse bien */
-     backdrop-filter: blur(5px);
-     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-     z-index: 7;
-  }
-  .eg-kit-actions{
-    display: flex;
-    flex-wrap: none;
-        margin: 12px 0 23px;
-    margin-left: 24px;
-  }
+        position: absolute;
+        bottom: -65px !important;
+        left: 50% !important;
+        transform: translate(-50%, 60%) !important;
+        width: 98% !important;
+        padding: 15px;
+        font-size: 0.85rem !important;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        z-index: 7;
+    }
+  .eg-kit-actions {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;
+  gap: 15px; /* Espacio entre los botones (ajustable) */
+  
+  /* Quitamos márgenes raros y aseguramos el ancho */
+  width: 100%; 
+  margin: 25px 0; 
+  padding: 0 18px; /* Un pequeño respiro lateral para que no toquen los bordes del cel */
+}
+
+/* Estilo de los botones (Pastillas) */
+.eg-pill {
+  /* ESTO ES LA CLAVE: */
+  flex: 1; /* "Crece para ocupar todo el espacio disponible" */
+  text-align: center; /* Texto centrado adentro de la pastilla */
+  
+  /* Diseño visual (Figma style) */
+  background-color: #fff;
+  color: #3A5DAE; /* Azul Corditur */
+  font-family: "TommySoft", sans-serif; /* Aseguramos la fuente */
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem; /* Tamaño controlado */
+  
+  /* Forma y Sombra */
+  border-radius: 50px; /* Bordes totalmente redondos */
+  padding: 7px 10px;  /* Alto cómodo para el dedo */
+  border: none;
+  
+  /* Sombra suave como en el diseño */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+/* Efecto al tocar */
+.eg-pill:active {
+  transform: scale(0.98);
+}
   .egc-card {
     margin-left: 17px;
     margin-right: 17px;
@@ -318,9 +348,9 @@
   .hh3 {
     
     text-align: center;
-        margin-top: 7rem !important;
+        margin-top: 3rem !important;
     margin-bottom: 2rem !important;
-    font-size: 1.9rem !important;
+    font-size: 1.5rem !important;
   }
 
   .eg-block {
@@ -357,9 +387,4 @@
     height: 32px;
   }
 
-  .egc-prev,
-  .egc-next {
-            left: 317px;
-    right: 8px;
-  }
 }
