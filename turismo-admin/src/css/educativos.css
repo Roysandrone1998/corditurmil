@@ -179,7 +179,7 @@ font-weight: 400 !important;
         - Nunca será más grande que 3.5rem (tu tamaño de escritorio).
         - En el medio, ocupará el 5% del ancho de la pantalla (5vw).
   */
-  font-size: clamp(1.3rem, 5vw, 3.5rem) !important;
+  font-size: clamp(1.1rem, 5vw, 3.5rem) !important;
 
   /* 2. OBLIGAR A UN SOLO RENGLÓN */
   white-space: nowrap;
