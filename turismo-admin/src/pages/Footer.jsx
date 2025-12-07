@@ -12,7 +12,7 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <a className="hs-btn font-helvetica w-200" href="https://www.instagram.com/corditurviajes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a className="hs-btn font-helvetica w-200" href="https://www.instagram.com/corditurviajes/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <img src="/img/instablanco.png" alt="Instagram" width="24" height="24" />
             </a>
           </li>

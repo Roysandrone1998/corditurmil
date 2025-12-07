@@ -279,13 +279,13 @@ export default function Navbar() {
             <a href="https://wa.me/5493430000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <img src="/img/wspazul.png" alt="" className="drawer-icon-img" />
             </a>
-            <a href="https://www.instagram.com/corditur" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/corditurviajes/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <img src="/img/instaazul.png" alt="" className="drawer-icon-img" />
             </a>
-            <a href="https://www.facebook.com/corditur" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/corditur.viajes?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <img src="/img/faceazul.png" alt="" className="drawer-icon-img" />
             </a>
-            <a href="https://www.instagram.com/corditur" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/cordituregresados?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <img src="/img/instaceleste.png" alt="" className="drawer-icon-img" />
             </a>
           </div>

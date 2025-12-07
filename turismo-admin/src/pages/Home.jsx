@@ -98,15 +98,15 @@ formativa y divertida.</p>
   <img src="/img/wspblanco.png" alt="" width="22" height="22" />
   <span className="visually-hidden">WhatsApp</span>
 </a>
-<a className="hs-btn" href="https://insta" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+<a className="hs-btn" href="https://www.instagram.com/corditur" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
   <img src="/img/instablanco.png" alt="" width="22" height="22" />
   <span className="visually-hidden">WhatsApp</span>
 </a>
-<a className="hs-btn" href="https://face" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+<a className="hs-btn" href="https://www.facebook.com/corditur.viajes?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
   <img src="/img/faceblanco.png" alt="" width="22" height="22" />
   <span className="visually-hidden">WhatsApp</span>
 </a>
-<a className="hs-btn" href="https://finsta" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+<a className="hs-btn" href="https://www.instagram.com/cordituregresados?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
   <img src="/img/instaceleste.png" alt="" width="22" height="22" />
   <span className="visually-hidden">insta</span>
 </a>

@@ -117,8 +117,8 @@
 
 .drawer-card {
     position: absolute; top: 18px; left: 12px;
-        width: min(399px, calc(100% - 30px));
-    height: 399px;
+    width: min(399px, calc(100% - 30px));
+    height: 462px;
     background: #fff; 
     color: #1b2b5a;
     border-radius: 20px; 
