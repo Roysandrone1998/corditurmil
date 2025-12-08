@@ -172,14 +172,14 @@ address {
        font-size: 10px;
         position: absolute;
         top: 85px;
-        left: 24px;
+        left: 28px;
         margin-bottom: 14px;
 }
 .footer-pow {
-            position: relative !important;
-    top: -9px;
-    margin-left: 229px;
-    font-size: 10px;
+                  position: relative !important;
+        top: -7px;
+        margin-left: 160px;
+        font-size: 10px;
 }
 /* Posicionamos cada bloque con grid-area */
   .f-brand {
@@ -239,7 +239,7 @@ display: none !important;
   }
  .footer-logo {
                 top: 24px;
-        left: 156px;
+        left: 134px;
         height: 50px;
         width: auto;
         margin: 0;

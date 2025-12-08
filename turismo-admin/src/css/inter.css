@@ -121,7 +121,7 @@ html, body { overflow-x: hidden; }
     /* CAMBIO CLAVE: Bajamos de 2.5rem a 1.7rem.
        Con este tamaño, la frase "¿ESTÁS LISTO PARA TU" entra
        perfecta en una línea de celular, y tu <br/> hace el resto. */
-    font-size: 1.8rem !important; 
+    font-size: 1.6rem !important; 
     
     line-height: 1.15 !important;
     margin-bottom: 15px; /* Separación con el párrafo */
