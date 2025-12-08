@@ -325,11 +325,9 @@
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.9rem; /* Tamaño controlado */
-  
-  /* Forma y Sombra */
-  border-radius: 50px; /* Bordes totalmente redondos */
-  padding: 7px 10px;  /* Alto cómodo para el dedo */
+        font-size: 0.8rem;
+        border-radius: 50px;
+        padding: 8px 9px;
   border: none;
   
   /* Sombra suave como en el diseño */
