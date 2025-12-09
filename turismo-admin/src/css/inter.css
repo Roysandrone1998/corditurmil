@@ -32,7 +32,7 @@
 
 .cr-img {
     width: 100%;
-    height: var(--cr-height, 550px);
+    height: 572px;
     object-fit: cover;
     object-position: center;
     display: block;
