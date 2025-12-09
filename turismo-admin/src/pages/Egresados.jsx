@@ -19,6 +19,7 @@ export default function EgresadosHome() {
     { src: "/img/egresados6.png", alt: "Egresados 6" },
     { src: "/img/egresados7.png", alt: "Egresados 7" },
     { src: "/img/egresados8.png", alt: "Egresados 8" },
+    { src: "/img/egresados9.png", alt: "Egresados 9" }
 
   ];
   const [gIdx, setGIdx] = useState(0);

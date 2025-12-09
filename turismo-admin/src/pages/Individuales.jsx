@@ -78,6 +78,9 @@ export default function Individuales() {
     { src: "/img/individuales3.png", alt: "Nacional 3" },
     { src: "/img/individuales4.png", alt: "Nacional 4" },
     { src: "/img/individuales5.png", alt: "Nacional 5" },
+    { src: "/img/individuales6.png", alt: "Nacional 6" }, 
+    { src: "/img/individuales7.png", alt: "Nacional 7" },
+    { src: "/img/individuales8.png", alt: "Nacional 8" }
 
 
   ];
