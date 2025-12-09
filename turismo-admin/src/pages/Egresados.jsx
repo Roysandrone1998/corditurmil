@@ -11,12 +11,15 @@ export default function EgresadosHome() {
 
   // Slides del carrusel inferior (cargá tus rutas reales)
   const gallery = [
-        { src: "/img/e1.png", alt: "Esados 1" },
-    { src: "/img/e2.png", alt: "Esados 2" },
-    { src: "/img/e3.png", alt: "Esados 3" },
-    { src: "/img/e4.png", alt: "Esados 4" },
-    { src: "/img/e5.png", alt: "Esados 5" },
-    { src: "/img/e6.png", alt: "Egresados 6" }
+        { src: "/img/egresados1.png", alt: "Esados 1" },
+    { src: "/img/egresados2.png", alt: "Esados 2" },
+    { src: "/img/egresados3.png", alt: "Esados 3" },
+    { src: "/img/egresados4.png", alt: "Esados 4" },
+    { src: "/img/egresados5.png", alt: "Esados 5" },
+    { src: "/img/egresados6.png", alt: "Egresados 6" },
+    { src: "/img/egresados7.png", alt: "Egresados 7" },
+    { src: "/img/egresados8.png", alt: "Egresados 8" },
+
   ];
   const [gIdx, setGIdx] = useState(0);
   const prevG = () => setGIdx(i => (i - 1 + gallery.length) % gallery.length);
