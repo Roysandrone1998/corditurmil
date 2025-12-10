@@ -23,7 +23,7 @@ export default function Home() {
       <article className="home-card">
         <div className="home-card-head">
           <h5 className="font-tommy w-500">INDIVIDUALES</h5>
-          <p className="font-helvetica w-200">Viajes únicos. Vos elegís el destino,<br/> nosotros lo hacemos posible.</p>
+          <p className="font-helvetica w-350">Viajes únicos. Vos elegís el destino,<br/> nosotros lo hacemos posible.</p>
         </div>
         <img
           className="home-card-img"
@@ -42,7 +42,7 @@ export default function Home() {
   <article className="home-card">
     <div className="home-card-head">
       <h5 className="font-tommy w-500">EGRESADOS</h5>
-      <p className="font-helvetica w-200">
+      <p className="font-helvetica w-350">
         El viaje que nunca se olvida. Diversión,<br/> organización y seguridad garantizadas.
       </p>
     </div>
@@ -70,7 +70,7 @@ export default function Home() {
       <article className="home-card">
         <div className="home-card-head">
           <h5 className="font-tommy w-500">EDUCATIVOS</h5>
-          <p className="font-helvetica w-200">  Viajes pensados para aprender,
+          <p className="font-helvetica w-350">  Viajes pensados para aprender,
 descubrir y crecer. Una experiencia
 formativa y divertida.</p>
         </div>
