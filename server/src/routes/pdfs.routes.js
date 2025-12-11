@@ -55,4 +55,21 @@
     res.json({ ok: true });
   });
 
+  router.get("/download/:filename", (req, res) => {
+  const { filename } = req.params;
+  // Buscamos el archivo en la carpeta física
+  const filePath = path.join(__dirname, "..", "uploads", "pdfs", filename);
+
+  if (fs.existsSync(filePath)) {
+    // res.download le dice al navegador: "Es un adjunto (attachment), descárgalo".
+    res.download(filePath, filename, (err) => {
+      if (err) {
+        // Si hay error (ej: el usuario cancela), no explotamos el server
+        if (!res.headersSent) res.status(404).send("Error al descargar");
+      }
+    });
+  } else {
+    res.status(404).json({ error: "El archivo no existe" });
+  }
+});
   export default router;
