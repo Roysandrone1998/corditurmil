@@ -22,8 +22,8 @@ export default function Home() {
     <div className="col-12 col-md-4">
       <article className="home-card">
         <div className="home-card-head">
-          <h5 className="font-tommy w-500">INDIVIDUALES</h5>
-          <p className="font-helvetica w-350">Viajes únicos. Vos elegís el destino,<br/> nosotros lo hacemos posible.</p>
+          <h5 className="font-tommy w-600">INDIVIDUALES</h5>
+          <p className="font-helvetica w-400">Viajes únicos. Vos elegís el destino,<br/> nosotros lo hacemos posible.</p>
         </div>
         <img
           className="home-card-img"
@@ -32,7 +32,7 @@ export default function Home() {
         />
       </article>
       <div className="text-center mt-2">
-        <Link to="/individuales" className="btn home-pill font-tommy w-500">CONOCÉ MÁS</Link>
+        <Link to="/individuales" className="btn home-pill font-tommy w-500">CONOCÉ MAS</Link>
       </div>
     </div>
 
@@ -41,8 +41,8 @@ export default function Home() {
 <div className="col-12 col-md-4">
   <article className="home-card">
     <div className="home-card-head">
-      <h5 className="font-tommy w-500">EGRESADOS</h5>
-      <p className="font-helvetica w-350">
+      <h5 className="font-tommy w-600">EGRESADOS</h5>
+      <p className="font-helvetica w-400">
         El viaje que nunca se olvida. Diversión,<br/> organización y seguridad garantizadas.
       </p>
     </div>
@@ -61,7 +61,7 @@ export default function Home() {
   </article>
   
   <div className="text-center mt-2">
-    <Link to="/egresados" className="btn home-pill font-tommy w-500">CONOCÉ MÁS</Link>
+    <Link to="/egresados" className="btn home-pill font-tommy w-500">CONOCÉ MAS</Link>
   </div>
 </div>
 
@@ -69,8 +69,8 @@ export default function Home() {
     <div className="col-12 col-md-4">
       <article className="home-card">
         <div className="home-card-head">
-          <h5 className="font-tommy w-500">EDUCATIVOS</h5>
-          <p className="font-helvetica w-350">  Viajes pensados para aprender,
+          <h5 className="font-tommy w-600">EDUCATIVOS</h5>
+          <p className="font-helvetica w-400">  Viajes pensados para aprender,
 descubrir y crecer. Una experiencia
 formativa y divertida.</p>
         </div>
@@ -81,7 +81,7 @@ formativa y divertida.</p>
         />
       </article>
       <div className="text-center mt-2">
-        <Link to="/educativos" className="btn home-pill font-tommy w-500">CONOCÉ MÁS</Link>
+        <Link to="/educativos" className="btn home-pill font-tommy w-500">CONOCÉ MAS</Link>
       </div>
     </div>
   </div>
@@ -115,7 +115,7 @@ formativa y divertida.</p>
 
     {/* tarjeta translúcida */}
     <div className="home-about-card">
-      <p className="mb-0 font-helvetica w-200">
+      <p className="mb-0 font-helvetica w-400">
         Somos Corditur, una agencia con 30 años de experiencia en el sector turístico.<br/>
         Organizamos viajes educativos, viajes de egresados y experiencias personalizadas para grupos o pasajeros individuales.<br/>
         Nos mueve el compromiso, la organización y la pasión por viajar. Acompañamos cada viaje desde la planificación<br/>
