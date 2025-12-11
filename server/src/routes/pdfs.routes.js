@@ -55,17 +55,28 @@
     res.json({ ok: true });
   });
 
-  router.get("/download/:filename", (req, res) => {
+  // Ruta para DESCARGAR (Versión Corregida)
+router.get("/download/:filename", (req, res) => {
   const { filename } = req.params;
-  // Buscamos el archivo en la carpeta física
   const filePath = path.join(__dirname, "..", "uploads", "pdfs", filename);
 
   if (fs.existsSync(filePath)) {
-    // res.download le dice al navegador: "Es un adjunto (attachment), descárgalo".
-    res.download(filePath, filename, (err) => {
+    // 1. Preparamos el nombre con el que se va a guardar en la PC del usuario
+    let downloadName = filename;
+    
+    // Si por alguna razón el nombre no termina en .pdf, se lo pegamos
+    if (!downloadName.toLowerCase().endsWith('.pdf')) {
+        downloadName += '.pdf';
+    }
+
+    // 2. Forzamos la cabecera Content-Type para asegurar que el navegador sepa que es un PDF
+    res.setHeader('Content-Type', 'application/pdf');
+
+    // 3. Enviamos el archivo forzando el nombre correcto
+    res.download(filePath, downloadName, (err) => {
       if (err) {
-        // Si hay error (ej: el usuario cancela), no explotamos el server
-        if (!res.headersSent) res.status(404).send("Error al descargar");
+        console.error("Error enviando archivo:", err);
+        if (!res.headersSent) res.status(500).send("Error en la descarga");
       }
     });
   } else {
