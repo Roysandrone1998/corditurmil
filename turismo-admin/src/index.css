@@ -1,45 +1,53 @@
-@font-face{
-    font-family: "Helvetica";
-    src: url("/fonts/Helvetica.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+/* Esta es la que arreglamos. Apunta al archivo nuevo */
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-@font-face{
-    font-family: "Helvetica";
-    src: url("/fonts/Helvetica-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+
+/* 2. BOLD (Negrita) -> w-700 */
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. LIGHT (Fina) -> w-200 */
+/* OJO: Para que esto funcione, necesitas conseguir el archivo Helvetica-Light.ttf
+   y ponerlo en la carpeta /fonts/. Si no lo tienes, el navegador usará la Regular. */
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica-Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- TOMMY SOFT (Estas déjalas igual) --- */
+@font-face {
+  font-family: "TommySoft";
+  src: url("/fonts/MADE Tommy Soft Medium PERSONAL USE.otf") format("opentype");
+  font-weight: 650; /* O w-500 si prefieres */
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: "Helvetica";
-    src: url("/fonts/Helvetica-Light.woff2") format("woff2"),
-            url("/fonts/Helvetica-Light.ttf") format("truetype");
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
+  font-family: "TommySoft";
+  src: url("/fonts/tommybold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
-@font-face{
-    font-family: "TommySoft";
-    src: url("/fonts/MADE Tommy Soft Medium PERSONAL USE.otf") format("opentype");
-    font-weight: 650;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face{
-    font-family: "TommySoft";
-    src: url("/fonts/tommybold.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face{
-    font-family: "TommySoft";
-    src: url("/fonts/MADE Tommy Soft ExtraBold PERSONAL USE.otf") format("opentype");
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
+@font-face {
+  font-family: "TommySoft";
+  src: url("/fonts/MADE Tommy Soft ExtraBold PERSONAL USE.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* =========================================
