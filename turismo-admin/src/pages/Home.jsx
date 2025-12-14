@@ -23,7 +23,7 @@ export default function Home() {
       <article className="home-card">
         <div className="home-card-head">
           <h5 className="font-tommy w-600">INDIVIDUALES</h5>
-          <p className="font-helvetica w-400">Viajes únicos. Vos elegís el destino,<br/> nosotros lo hacemos posible.</p>
+          <p className="font-helvetica w-500">Viajes únicos. Vos elegís el destino,<br/> nosotros lo hacemos posible.</p>
         </div>
         <img
           className="home-card-img"

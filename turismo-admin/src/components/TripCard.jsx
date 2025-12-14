@@ -78,7 +78,7 @@ function TripCard({ v }) {
       {/* PDF / Itinerario abajo derecha */}
       {pdfHref && (
         <a
-          className="btn btn-sm  rounded-pill trip-pdf"
+          className="btn btn-sm  rounded-pill trip-pdf font-tommy w-500"
           href={pdfHref}
           target="_blank"
           rel="noreferrer"
