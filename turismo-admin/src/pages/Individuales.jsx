@@ -58,6 +58,7 @@ function HeroCarousel({ images, index, setIndex, onOpenLightbox, height = 488 })
                   src={images[index].src}
                   alt={images[index].alt}
                   onClick={() => onOpenLightbox(index)}
+                  style={{ objectPosition: images[index].pos || "center" }}
                 />
                 <div className="cr-grad" />
               </article>
@@ -74,7 +75,7 @@ export default function Individuales() {
   const imagesNac = [
 
     { src: "/img/individuales1.png", alt: "Nacional 1" },
-    { src: "/img/individuales2.png", alt: "Nacional 2" },
+    { src: "/img/individuales1.png", alt: "Nacional 1", pos: "center 20%" },
     { src: "/img/individuales3.png", alt: "Nacional 3" },
     { src: "/img/individuales4.png", alt: "Nacional 4" },
     { src: "/img/individuales5.png", alt: "Nacional 5" },
@@ -150,7 +151,7 @@ export default function Individuales() {
       <section className="container my-4">
         <CategoryList categoria="nacional" limit={3} />
         <div className="text-center mt-3" style={{ marginBottom : 72 }}>
-          <Link to="/nacionales" className="font-helvetica w-400 text-white" >
+          <Link to="/nacionales" className="font-helvetica w-401 text-white" >
             VER MAS FECHAS
           </Link>
         </div>
@@ -178,7 +179,7 @@ export default function Individuales() {
       <section className="container my-4">
         <CategoryList categoria="internacional" limit={3} />
         <div className="text-center mt-3 "style={{ marginBottom : 72 }}>
-          <Link to="/internacionales" className="font-helvetica w-400 text-white">
+          <Link to="/internacionales" className="font-helvetica w-401 text-white">
           VER MAS FECHAS
           </Link>
         </div>

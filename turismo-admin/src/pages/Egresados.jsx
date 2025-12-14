@@ -156,9 +156,25 @@ export default function EgresadosHome() {
             <img className="eg-kit-img" src="/img/egrekit.png" alt="Kit del egresado Corditur" />
           </div>
 
+         {/* ===== BOTONES DE DESCARGA ===== */}
           <div className="eg-kit-actions">
-            <a className="eg-pill font-tommy w-500" href="#" role="button">FICHA MÉDICA</a>
-            <a className="eg-pill font-tommy w-500" href="#" role="button">FICHA ADHESIÓN</a>
+            <a 
+              className="eg-pill font-tommy w-500" 
+              href="/docs/ficha-medica.pdf"   /* 1. Ruta al archivo en public/docs */
+              download="Ficha_Medica_Corditur.pdf" /* 2. Nombre con el que se guarda */
+              role="button"
+            >
+              FICHA MÉDICA
+            </a>
+            
+            <a 
+              className="eg-pill font-tommy w-500" 
+              href="/docs/FichaM-Edu.pdf" /* 1. Ruta al archivo */
+              download="Ficha_Adhesion_Corditur.pdf" /* 2. Nombre con el que se guarda */
+              role="button"
+            >
+              FICHA ADHESIÓN
+            </a>
           </div>
 
           {/* ===== Carrusel inferior ===== */}

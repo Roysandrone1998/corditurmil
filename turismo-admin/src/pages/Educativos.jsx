@@ -67,7 +67,7 @@ const IMAGENES = [
             <div className="edu2-downloads text-center">
                 <h3 className="font-tommy w-600">DESCARGA TODO LO NECESARIO</h3>
                 <div className="edu2-dl-row">
-                <a className="edu2-pill font-tommy w-500" href="/pdfs/ficha-medica.pdf" download>
+                <a className="edu2-pill font-tommy w-500" href="/docs/FichaM-Edu.pdf" download>
                     FICHA MÉDICA
                 </a>
                 <a className="edu2-pill font-tommy w-500" href="/pdfs/permiso-educativo.pdf" download>
