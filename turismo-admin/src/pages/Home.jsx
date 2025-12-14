@@ -94,7 +94,7 @@ formativa y divertida.</p>
 
       {/* redes (derecha) */}
       <div className="home-social ">
-        <a className="hs-btn" href="https://wa.me/5493430000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <a className="hs-btn" href="http://wa.me/3434662347" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
   <img src="/img/wspblanco.png" alt="" width="22" height="22" />
   <span className="visually-hidden">WhatsApp</span>
 </a>
