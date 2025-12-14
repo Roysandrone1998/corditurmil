@@ -42,7 +42,7 @@ export default function Home() {
   <article className="home-card">
     <div className="home-card-head">
       <h5 className="font-tommy w-600">EGRESADOS</h5>
-      <p className="font-helvetica w-400">
+      <p className="font-helvetica w-500">
         El viaje que nunca se olvida. Diversión,<br/> organización y seguridad garantizadas.
       </p>
     </div>
@@ -70,7 +70,7 @@ export default function Home() {
       <article className="home-card">
         <div className="home-card-head">
           <h5 className="font-tommy w-600">EDUCATIVOS</h5>
-          <p className="font-helvetica w-400">  Viajes pensados para aprender,
+          <p className="font-helvetica w-500">Viajes pensados para aprender,
 descubrir y crecer. Una experiencia
 formativa y divertida.</p>
         </div>
@@ -115,7 +115,7 @@ formativa y divertida.</p>
 
     {/* tarjeta translúcida */}
     <div className="home-about-card">
-      <p className="mb-0 font-helvetica w-400">
+      <p className="mb-0 font-helvetica w-500">
         Somos Corditur, una agencia con 30 años de experiencia en el sector turístico.<br/>
         Organizamos viajes educativos, viajes de egresados y experiencias personalizadas para grupos o pasajeros individuales.<br/>
         Nos mueve el compromiso, la organización y la pasión por viajar. Acompañamos cada viaje desde la planificación<br/>

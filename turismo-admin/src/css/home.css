@@ -57,7 +57,7 @@
 
 }
 .home-card-head h5{
-  margin: 0 0 2px;
+  margin: 0 0 2px;font-size: 28px;
   font-weight: 900; letter-spacing: .5px; color: #3A5DAE; text-transform: uppercase;
 }
 .home-card-head p{ margin: 0; font-size: .93rem; line-height: 1.2; color: #3A5DAE; }
