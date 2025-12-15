@@ -5,11 +5,11 @@ import "../css/educativos.css";
 
 const IMAGENES = [
   // Poné 1 o más imágenes en /public/images/educativos/
-        "/img/educativo1.png",
-        "/img/educativo2.png",
-        "/img/educativo3.png",
-        "/img/educativo4.png",
-        "/img/educativo5.png"
+        "/img/educativo1.jpg",
+        "/img/educativo2.jpg",
+        "/img/educativo3.jpg",
+        "/img/educativo4.jpg",
+        "/img/educativo5.jpg"
     ];
 
     export default function EducativosHome() {
