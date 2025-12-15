@@ -93,7 +93,7 @@
 .home-about-header h3{ color: #fff; letter-spacing: .3px; }
 .home-social{ display: flex; gap: 10px;
        left: 64%;
-    top: 15px; position: relative;}
+    top: -5px; position: relative;}
 .hs-btn{
   width: 36px; height: 36px; border-radius: 50%;
   display: grid; place-items: center;
