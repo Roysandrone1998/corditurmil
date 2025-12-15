@@ -98,7 +98,7 @@ formativa y divertida.</p>
   <img src="/img/wspblanco.png" alt="" width="22" height="22" />
   <span className="visually-hidden">WhatsApp</span>
 </a>
-<a className="hs-btn" href="https://www.instagram.com/corditur" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+<a className="hs-btn" href="https://www.instagram.com/corditurviajes/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
   <img src="/img/instablanco.png" alt="" width="22" height="22" />
   <span className="visually-hidden">WhatsApp</span>
 </a>

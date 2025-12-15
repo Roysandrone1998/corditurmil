@@ -174,10 +174,11 @@
 }
 
 .drawer-section {
-    padding: 12px 25px 4px; /* Un poco más de aire arriba */
-    margin-top: 4px; color: #1b2b5a;
+        padding: 10px 25px 4px;
+    margin-top: 4px;
+    color: #1b2b5a;
     letter-spacing: .3px;
-    font-size: 16px;
+    font-size: 20px;
 }
 .drawer-social { display: flex; gap: 12px;padding: 11px 20px 16px; }
 .drawer-social a {
