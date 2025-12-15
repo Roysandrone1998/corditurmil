@@ -80,7 +80,7 @@ function HeroCarousel({ images, index, setIndex, onOpenLightbox, height = 488 })
    ========================================= */
 const IMAGENES = [
     { src: "/img/educativo1.jpg", alt: "Educativo 1" ,pos: "center 95%" },
-    { src: "/img/educativo2.jpg", alt: "Educativo 2" ,pos: "center 95%"},
+    { src: "/img/educativo2.jpg", alt: "Educativo 2" ,pos: "center 70%"},
     { src: "/img/educativo3.jpg", alt: "Educativo 3" ,pos: "center 95%"},
     { src: "/img/educativo4.jpg", alt: "Educativo 4" ,pos: "center 95%"},
     { src: "/img/educativo5.jpg", alt: "Educativo 5",pos: "center 95%" }
