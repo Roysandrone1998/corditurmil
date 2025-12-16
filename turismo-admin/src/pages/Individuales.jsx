@@ -75,7 +75,7 @@ export default function Individuales() {
   const imagesNac = [
 
     { src: "/img/individuales1.png", alt: "Nacional 1" },
-    { src: "/img/individuales1.png", alt: "Nacional 2", pos: "center 20%" },
+    { src: "/img/individuales2.png", alt: "Nacional 2", pos: "center 20%" },
     { src: "/img/individuales3.png", alt: "Nacional 3" , pos: "center 95%"},
     { src: "/img/individuales4.png", alt: "Nacional 4", pos: "center 95%" },
     { src: "/img/individuales5.png", alt: "Nacional 5", pos: "center 95%" },
