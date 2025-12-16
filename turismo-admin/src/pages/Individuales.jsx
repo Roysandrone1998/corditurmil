@@ -89,8 +89,12 @@ export default function Individuales() {
 
   // INTERNACIONALES
   const imagesInt = [
-    { src: "/img/individuales2.png", alt: "Internacional 1" },
-    { src: "/img/individuales3.png", alt: "Internacional 2" },
+    { src: "/img/inter1.png", alt: "Internacional 1" },
+    { src: "/img/inter2.png", alt: "Internacional 2" },
+    { src: "/img/inter3.png", alt: "Internacional 3" },
+    { src: "/img/inter4.png", alt: "Internacional 4" },
+    { src: "/img/inter5.png", alt: "Internacional 5" },
+    { src: "/img/inter6.png", alt: "Internacional 6" }
     
   ];
   const [i2, setI2] = useState(0);
