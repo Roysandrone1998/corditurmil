@@ -153,8 +153,7 @@ margin-bottom: 25px;
 
   /* Ajuste para el párrafo si también usaste <br/> */
   .home-hero p {
-    font-size: 0.9rem !important;
-    line-height: 1.3 !important;
+    line-height:     clamp(1rem, 1.3rem, 1.25rem)!important;
     margin-top: 8px;
     padding: 0 10px; /* Reduje el padding lateral para darle espacio al texto */
   }
@@ -163,7 +162,7 @@ margin-bottom: 25px;
     height: 112px;
   }
   .home-card-head h5 {
-    font-size: 1.1rem;
+            font-size: 1.4rem;
   }
   .home-card-head p {
     font-size: 0.85rem;

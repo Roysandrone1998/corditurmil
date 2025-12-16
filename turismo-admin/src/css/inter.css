@@ -165,7 +165,10 @@ html, body { overflow-x: hidden; }
         height: 100% !important; /* Llena la tarjeta */
         object-fit: cover !important;
     }
-
+.h2inter {
+    margin-bottom: 22px;
+    font-size: 37px;
+}
     /* 5. Flechas: Pegadas a los bordes de la pantalla */
     .cr-prev-out { left: 5px !important; z-index: 50 !important; }
     .cr-next-out { right: 5px !important; z-index: 50 !important; }
