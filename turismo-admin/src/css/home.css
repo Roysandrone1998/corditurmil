@@ -225,4 +225,10 @@ margin-bottom: 25px;
 .descarg{
     font-size: 20px !important;
 }
+    .cr-card {
+        width: 84vw !important;
+        margin: 0 auto !important;
+        
+        height: 239px !important;
+    }
 }
