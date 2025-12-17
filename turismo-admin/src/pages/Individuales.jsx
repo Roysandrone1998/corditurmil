@@ -74,14 +74,14 @@ export default function Individuales() {
   // NACIONALES
   const imagesNac = [
 
-    { src: "/img/individuales1.jpg", alt: "Nacional 1" },
-    { src: "/img/individuales2.jpg", alt: "Nacional 2", pos: "center 20%" },
-    { src: "/img/individuales3.jpg", alt: "Nacional 3" , pos: "center 95%"},
-    { src: "/img/individuales4.jpg", alt: "Nacional 4", pos: "center 95%" },
-    { src: "/img/individuales5.jpg", alt: "Nacional 5", pos: "center 95%" },
-    { src: "/img/individuales6.jpg", alt: "Nacional 6" , pos: "center 95%"}, 
-    { src: "/img/individuales7.jpg", alt: "Nacional 7", pos: "center 95%" },
-    { src: "/img/individuales8.jpg", alt: "Nacional 8", pos: "center 95%" }
+    { src: "/img/individuales1.png", alt: "Nacional 1" },
+    { src: "/img/individuales2.png", alt: "Nacional 2", pos: "center 20%" },
+    { src: "/img/individuales3.png", alt: "Nacional 3" , pos: "center 95%"},
+    { src: "/img/individuales4.png", alt: "Nacional 4", pos: "center 95%" },
+    { src: "/img/individuales5.png", alt: "Nacional 5", pos: "center 95%" },
+    { src: "/img/individuales6.png", alt: "Nacional 6" , pos: "center 95%"}, 
+    { src: "/img/individuales7.png", alt: "Nacional 7", pos: "center 95%" },
+    { src: "/img/individuales8.png", alt: "Nacional 8", pos: "center 95%" }
 
 
   ];
@@ -89,12 +89,12 @@ export default function Individuales() {
 
   // INTERNACIONALES
   const imagesInt = [
-    { src: "/img/inter1.jpg", alt: "Internacional 1" },
-    { src: "/img/inter2.jpg", alt: "Internacional 2" },
-    { src: "/img/inter3.jpg", alt: "Internacional 3" },
-    { src: "/img/inter4.jpg", alt: "Internacional 4" },
-    { src: "/img/inter5.jpg", alt: "Internacional 5" },
-    { src: "/img/inter6.jpg", alt: "Internacional 6" }
+    { src: "/img/inter1.jpg", alt: "Internacional 1",pos: "center 95%" },
+    { src: "/img/inter2.jpg", alt: "Internacional 2", pos: "center 52%"},
+    { src: "/img/inter3.jpg", alt: "Internacional 3",pos: "center 95%" },
+    { src: "/img/inter4.jpg", alt: "Internacional 4" ,pos: "center 95%"},
+    { src: "/img/inter5.jpg", alt: "Internacional 5" ,pos: "center 95%"},
+    { src: "/img/inter6.jpg", alt: "Internacional 6",pos: "center 95%" }
     
   ];
   const [i2, setI2] = useState(0);
