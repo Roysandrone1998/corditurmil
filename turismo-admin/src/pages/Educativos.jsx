@@ -7,7 +7,6 @@ import fichaMedica from "../../public/docs/FichaM-Edu.pdf";
 import permisoEdu from "../../public/docs/Autorizacion.pdf";
 import fichaAdhesion from "../../public/docs/FichaAdhesionEDUCATIVO.pdf";
 
-
 function ArrowLeft() {
   return (
     <svg viewBox="0 0 24 24">
