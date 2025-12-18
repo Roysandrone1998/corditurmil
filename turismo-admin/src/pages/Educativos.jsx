@@ -6,9 +6,7 @@ import "../css/inter.css";
 import fichaMedica from "../../public/docs/FichaM-Edu.pdf"; 
 import permisoEdu from "../../public/docs/Autorizacion.pdf";
 import fichaAdhesion from "../../public/docs/FichaAdhesionEDUCATIVO.pdf";
-/* =========================================
-   1. COMPONENTES AUXILIARES (Iconos y Carrusel)
-   ========================================= */
+
 
 function ArrowLeft() {
   return (
@@ -77,9 +75,6 @@ function HeroCarousel({ images, index, setIndex, onOpenLightbox, height = 488 })
   );
 }
 
-/* =========================================
-   2. DATOS
-   ========================================= */
 const IMAGENES = [
     { src: "/img/educativo1.jpg", alt: "Educativo 1" ,pos: "center 95%" },
     { src: "/img/educativo2.jpg", alt: "Educativo 2" ,pos: "center 70%"},
@@ -123,7 +118,7 @@ export default function EducativosHome() {
   return (
     <>
       <main className="edu2-page">
-        {/* Título + texto */}
+
         <section className="edu2-hero">
           <div className="container text-center">
             <h1 className="font-tommy w-500">EDUCATIVOS</h1>
@@ -139,7 +134,6 @@ export default function EducativosHome() {
 
         <CategoryList categoria="educativos" />
 
-        {/* SECCIÓN GALERÍA */}
         <section className="edu2-gallery my-5">
             <HeroCarousel
               images={IMAGENES}
@@ -168,7 +162,6 @@ export default function EducativosHome() {
             </div>
         </section>
 
-        {/* LIGHTBOX */}
         {lbOpen && (
           <div className="lb-overlay" onClick={closeLb}>
             <div className="lb-box" onClick={(e) => e.stopPropagation()}>
@@ -183,7 +176,6 @@ export default function EducativosHome() {
             </div>
           </div>
         )}
-
       </main>
     </>
   );
