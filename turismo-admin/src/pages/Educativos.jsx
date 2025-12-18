@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 import "../css/educativos.css";
 import "../css/inter.css"; 
 import fichaMedica from "../../public/docs/FichaM-Edu.pdf"; 
-import permisoEdu from "../../../public/pdfs/permiso-educativo.pdf";
+import permisoEdu from "../../public/docs/Autorizacion.pdf";
 import fichaAdhesion from "../../public/docs/FichaAdhesionEDUCATIVO.pdf";
 /* =========================================
    1. COMPONENTES AUXILIARES (Iconos y Carrusel)
@@ -157,9 +157,9 @@ export default function EducativosHome() {
                   <a className="edu2-pill font-tommy w-500" href={fichaMedica} download="FichaM-Edu.pdf">
     FICHA MÉDICA
   </a>
-                  <a className="edu2-pill font-tommy w-500" href="/pdfs/permiso-educativo.pdf" download>
-                    PERMISO EDUCATIVO
-                  </a>
+                  <a className="edu2-pill font-tommy w-500" href={permisoEdu} download="permiso-educativo.pdf">
+    PERMISO EDUCATIVO
+  </a>
                   <a className="edu2-pill font-tommy w-500" href={fichaAdhesion} download="FichaAdhesion.pdf">
     FICHA DE ADHESIÓN
   </a>
