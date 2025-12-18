@@ -162,7 +162,7 @@
               <a 
                 className="eg-pill font-tommy w-500" 
                 href="/docs/fichaMedicaEgresados.pdf" // Ruta directa desde la raíz de 'public'
-    download="FichaMedicaEgresados.pdf"
+    
     role="button"
               >
                 FICHA MÉDICA
@@ -171,7 +171,7 @@
               <a 
                 className="eg-pill font-tommy w-500" 
                 href="/docs/FichaAdhesionEgresados.pdf" // Ruta directa
-    download="FichaAdhesionEgresados.pdf"
+    
                 role="button"
               >
                 FICHA ADHESIÓN
