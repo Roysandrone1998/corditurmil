@@ -162,7 +162,7 @@
               <a 
                 className="eg-pill font-tommy w-500" 
                 href={`${window.location.origin}/docs/fichaMedicaEgre.pdf`} 
-    download="fichaMedicaEgresados.pdf"
+    download="fichaMedicaEgre.pdf"
     role="button"
               >
                 FICHA MÉDICA
