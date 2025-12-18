@@ -28,19 +28,25 @@ function TripCard({ v }) {
 
   const fechaSalida = pickFechaSalida(v);
 
-  let pdfHref = "";
+let pdfHref = "";
   if (v.pdf_itinerario) {
-    // 1. Si empieza con "http", es de Cloudinary (URL absoluta) -> Úsala directo.
+    // 1. Si es de Cloudinary (URL absoluta)
     if (v.pdf_itinerario.startsWith("http")) {
+      // Si la URL es de Cloudinary, le inyectamos fl_attachment para forzar descarga
+      if (v.pdf_itinerario.includes("cloudinary.com")) {
+        // Reemplazamos /upload/ por /upload/fl_attachment/
+        // Esto le dice a Cloudinary: "Serví este archivo para descargar, no para visualizar"
+        pdfHref = v.pdf_itinerario.replace("/upload/", "/upload/fl_attachment/");
+      } else {
         pdfHref = v.pdf_itinerario;
+      }
     }
-    // 2. Si no, asumimos que es un archivo viejo local -> Le pegamos el origen.
+    // 2. Archivos viejos locales
     else {
-        pdfHref = `${API_ORIGIN}${v.pdf_itinerario}`;
+      pdfHref = `${API_ORIGIN}${v.pdf_itinerario}`;
     }
   }
-
-  return (
+  return (  
 
     <div className="trip-card position-relative">
       {/* Acciones arriba derecha */}
@@ -78,8 +84,11 @@ function TripCard({ v }) {
       {/* PDF / Itinerario abajo derecha */}
       {pdfHref && (
         <a
-          className="btn btn-sm  rounded-pill trip-pdf font-tommy w-500"
+          className="btn btn-sm rounded-pill trip-pdf font-tommy w-500"
           href={pdfHref}
+          // Agregamos download con un nombre genérico pero con extensión .pdf
+          // Esto ayuda a que Windows reconozca el archivo si falla lo anterior
+          download={`itinerario-${v.destino || "viaje"}.pdf`}
           target="_blank"
           rel="noreferrer"
         >
