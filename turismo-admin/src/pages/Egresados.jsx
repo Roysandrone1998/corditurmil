@@ -161,15 +161,17 @@
             <div className="eg-kit-actions">
               <a 
                 className="eg-pill font-tommy w-500" 
-                href={fichaMedicaEgre} download="FichaMedicaEgresados.pdf"
-                role="button"
+                href="/docs/fichaMedicaEgresados.pdf" // Ruta directa desde la raíz de 'public'
+    download="FichaMedicaEgresados.pdf"
+    role="button"
               >
                 FICHA MÉDICA
               </a>
               
               <a 
                 className="eg-pill font-tommy w-500" 
-                href={fichadd} download="FichaAdhesionEgresados.pdf"
+                href="/docs/FichaAdhesionEgresados.pdf" // Ruta directa
+    download="FichaAdhesionEgresados.pdf"
                 role="button"
               >
                 FICHA ADHESIÓN
