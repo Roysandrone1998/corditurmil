@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Footer from "./Footer.jsx";
-import fichadd from "../css/egresados.css";
-import fichaMedicaEdu from "../../public/docs/";
+import fichadd from "../../public/docs/FichaAdhesionEgresados.pdf";
+import  "../css/egresados.css";
+import fichaMedicaEgre from "../../public/docs/fichaMedicaEgresados.pdf";
 im 
 export default function EgresadosHome() {
   // Fondo exclusivo para esta página (incluye zona de la navbar)
@@ -161,7 +161,7 @@ export default function EgresadosHome() {
           <div className="eg-kit-actions">
             <a 
               className="eg-pill font-tommy w-500" 
-               href={fichaMedicaEdu} download="ficha-medica-egresados.pdf"
+               href={fichaMedicaEgre} download="ficha-medica-egresados.pdf"
               role="button"
             >
               FICHA MÉDICA
