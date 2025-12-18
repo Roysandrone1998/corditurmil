@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import fichadd from "../../public/docs/FichaAdhesionEgresados.pdf";
 import  "../css/egresados.css";
 import fichaMedicaEgre from "../../public/docs/fichaMedicaEgresados.pdf";
-im 
+
 export default function EgresadosHome() {
   // Fondo exclusivo para esta página (incluye zona de la navbar)
  useEffect(() => {
