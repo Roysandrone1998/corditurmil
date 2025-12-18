@@ -22,7 +22,6 @@ const ViajeSchema = new mongoose.Schema({
     index: true
   },
 
-  // solo PDF
   pdf_itinerario: String,
 
   publicado: { type: Boolean, default: true }

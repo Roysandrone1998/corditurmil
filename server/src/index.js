@@ -15,7 +15,7 @@ import pdfsRoutes from './routes/pdfs.routes.js';
 
 const app = express();
 
-// ✅ CORRECCIÓN 1: Trust Proxy
+
 // Necesario para que Render maneje bien las cookies seguras (secure: true)
 app.set('trust proxy', 1);
 
