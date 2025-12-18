@@ -1,26 +1,42 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/docs/(.*)",
-      "destination": "/docs/$1"
+      "src": "server/src/index.js",
+      "use": "@vercel/node"
     },
     {
-      "source": "/assets/(.*)",
-      "destination": "/assets/$1"
+      "src": "turismo-admin/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/src/index.js"
     },
     {
-      "source": "/img/(.*)",
-      "destination": "/img/$1"
+      "src": "/docs/(.*)",
+      "dest": "turismo-admin/docs/$1"
     },
     {
-      "source": "/fonts/(.*)",
-      "destination": "/fonts/$1"
+      "src": "/assets/(.*)",
+      "dest": "turismo-admin/assets/$1"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/img/(.*)",
+      "dest": "turismo-admin/img/$1"
+    },
+    {
+      "src": "/fonts/(.*)",
+      "dest": "turismo-admin/fonts/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "turismo-admin/index.html"
     }
   ]
 }

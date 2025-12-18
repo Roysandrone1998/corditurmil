@@ -79,10 +79,7 @@ export default function Individuales() {
     { src: "/img/individuales3.png", alt: "Nacional 3" , pos: "center 95%"},
     { src: "/img/individuales4.png", alt: "Nacional 4", pos: "center 95%" },
     { src: "/img/individuales5.png", alt: "Nacional 5", pos: "center 95%" },
-    
     { src: "/img/individuales6.png", alt: "Nacional 6" , pos: "center 95%"}, 
-    { src: "/img/individuales7.png", alt: "Nacional 7", pos: "center 10%" },{ src: "/img/individuales6.png", alt: "Nacional 6" , pos: "center 95%"}, 
-    { src: "/img/individuales7.png", alt: "Nacional 7", pos: "center 10%" },{ src: "/img/individuales6.png", alt: "Nacional 6" , pos: "center 95%"}, 
     { src: "/img/individuales7.png", alt: "Nacional 7", pos: "center 10%" },
     { src: "/img/individuales8.png", alt: "Nacional 8", pos: "center 67%" }
 
