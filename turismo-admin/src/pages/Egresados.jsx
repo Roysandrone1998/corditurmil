@@ -162,7 +162,7 @@
               <a 
                 className="eg-pill font-tommy w-500" 
                 href={`${window.location.origin}/docs/fichaMedicaEgresados.pdf`} 
-    target="_blank"
+    download="fichaMedicaEgresados.pdf"
     role="button"
               >
                 FICHA MÉDICA
@@ -171,7 +171,7 @@
               <a 
                 className="eg-pill font-tommy w-500" 
                 href={`${window.location.origin}/docs/FichaAdhesionEgresados.pdf`}
-                target="_blank"
+                download="FichaAdhesionEgresados.pdf"
                 role="button"
               >
                 FICHA ADHESIÓN
