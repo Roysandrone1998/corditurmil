@@ -44,7 +44,7 @@ app.use(cors({
             callback(null, true);
         } else {
             console.log('Bloqueado por CORS:', origin); 
-            // Para debug: permitimos pasar pero logueamos el error
+          
             callback(null, true); 
         }
     },
