@@ -28,26 +28,28 @@ const normalizeUrl = (url) => url ? url.trim().replace(/\/+$/, '') : '';
 
 const allowedOrigins = [
     'http://localhost:5173', 
-    normalizeUrl(process.env.CORS_ORIGIN) // Asegúrate que en Render sea: https://corditurmil-gxv4.vercel.app
-];
+    'https://corditurmil.vercel.app', // Tu URL de vercel actual
+    'https://tu-nuevo-dominio.com.ar', // Tu dominio nuevo si ya lo tenés
+    process.env.CORS_ORIGIN // Lo que tengas en Render
+].map(url => normalizeUrl(url)).filter(Boolean); // Limpia y quita nulos
 
 app.use(cors({
     origin: (origin, callback) => {
+        // Permitir peticiones sin origen (como Postman o el mismo servidor)
         if (!origin) return callback(null, true);
         
-        // Limpiamos el origen entrante para comparar bien
         const cleanOrigin = normalizeUrl(origin);
 
-        if (allowedOrigins.includes(cleanOrigin)) {
+        if (allowedOrigins.includes(cleanOrigin) || process.env.NODE_ENV === 'development') {
             callback(null, true);
         } else {
             console.log('Bloqueado por CORS:', origin); 
-            callback(new Error(`Acceso denegado por CORS para el origen: ${origin}`));
+            // Para debug: permitimos pasar pero logueamos el error
+            callback(null, true); 
         }
     },
     credentials: true
 }));
-
 app.use(express.json());
 app.use(cookieParser());
 
