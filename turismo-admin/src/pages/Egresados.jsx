@@ -12,8 +12,8 @@ export default function EgresadosHome() {
 
   // Slides del carrusel inferior (cargá tus rutas reales)
   const gallery = [
-        { src: "/img/egresados1.png", alt: "Esados 1" },
-    { src: "/img/egresados2.png", alt: "Esados 2" },
+        { src: "/img/egresados3.png", alt: "Esados 1" },
+    { src: "/img/egresados3.png", alt: "Esados 2" },
     { src: "/img/egresados3.png", alt: "Esados 3" },
     { src: "/img/egresados4.png", alt: "Esados 4" },
     { src: "/img/egresados5.png", alt: "Esados 5" },
