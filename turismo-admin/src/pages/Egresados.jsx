@@ -161,8 +161,8 @@
             <div className="eg-kit-actions">
               <a 
                 className="eg-pill font-tommy w-500" 
-                href={`${window.location.origin}/docs/fichaMedicaEgre.pdf`} 
-    download="fichaMedicaEgre.pdf"
+                href={`${window.location.origin}/docs/fichaMedicaEgresados.pdf`} 
+    download="fichaMedicaEgresados.pdf"
     role="button"
               >
                 FICHA MÉDICA
