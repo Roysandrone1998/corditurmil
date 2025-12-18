@@ -158,7 +158,7 @@ export default function EducativosHome() {
                   <a className="edu2-pill font-tommy w-500" href="/pdfs/permiso-educativo.pdf" download>
                     PERMISO EDUCATIVO
                   </a>
-                  <a className="edu2-pill font-tommy w-500" href="/pdfs/ficha-adhesion.pdf" download>
+                  <a className="edu2-pill font-tommy w-500" href="/docs/FichaAdhesionEDUCATIVO.pdf" download>
                     FICHA DE ADHESIÓN
                   </a>
                 </div>
