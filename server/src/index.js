@@ -44,7 +44,6 @@ app.use(cors({
             callback(null, true);
         } else {
             console.log('Bloqueado por CORS:', origin); 
-          
             callback(null, true); 
         }
     },
@@ -72,11 +71,11 @@ const PORT = process.env.PORT || 4000;
 // --- INICIO DEL SERVIDOR ---
 connectDB().then(() => {
     app.listen(PORT, () => {
-        console.log(`✅ Servidor corriendo en puerto ${PORT}`);
-        console.log(`✅ Ambiente: ${process.env.NODE_ENV || 'development'}`);
+        console.log(` Servidor corriendo en puerto ${PORT}`);
+        console.log(` Ambiente: ${process.env.NODE_ENV || 'development'}`);
     });
 }).catch(err => {
-    console.error('❌ Error fatal al conectar a la DB:', err);
+    console.error(' Error fatal al conectar a la DB:', err);
 });
 
 export default app;
