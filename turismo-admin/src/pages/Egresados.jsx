@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import Footer from "./Footer.jsx";
-import "../css/egresados.css";
-
+import fichadd from "../css/egresados.css";
+import fichaMedicaEdu from "../../public/docs/";
+im 
 export default function EgresadosHome() {
   // Fondo exclusivo para esta página (incluye zona de la navbar)
  useEffect(() => {
@@ -160,8 +161,7 @@ export default function EgresadosHome() {
           <div className="eg-kit-actions">
             <a 
               className="eg-pill font-tommy w-500" 
-              href="/docs/ficha-medica.pdf"   /* 1. Ruta al archivo en public/docs */
-              download="Ficha_Medica_Corditur.pdf" /* 2. Nombre con el que se guarda */
+               href={fichaMedicaEdu} download="ficha-medica-egresados.pdf"
               role="button"
             >
               FICHA MÉDICA
@@ -169,8 +169,7 @@ export default function EgresadosHome() {
             
             <a 
               className="eg-pill font-tommy w-500" 
-              href="/docs/FichaM-Edu.pdf" /* 1. Ruta al archivo */
-              download="Ficha_Adhesion_Corditur.pdf" /* 2. Nombre con el que se guarda */
+               href={fichadd} download="permiso-educativo.pdf"
               role="button"
             >
               FICHA ADHESIÓN
