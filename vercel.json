@@ -19,6 +19,10 @@
       "dest": "server/src/index.js"
     },
     {
+      "src": "/docs/(.*)",
+      "dest": "turismo-admin/docs/$1"
+    },
+    {
       "src": "/assets/(.*)",
       "dest": "turismo-admin/assets/$1"
     },
