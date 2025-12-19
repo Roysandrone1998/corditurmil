@@ -276,7 +276,7 @@ export default function Navbar() {
           </ul>
           <div className="drawer-section font-tommy w-600">QUIENES SOMOS</div>
           <div className="drawer-social">
-            <a href="https://wa.me/5493430000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a href="http://wa.me/3434662347" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <img src="/img/wspazul.png" alt="" className="drawer-icon-img" />
             </a>
             <a href="https://www.instagram.com/corditurviajes/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
