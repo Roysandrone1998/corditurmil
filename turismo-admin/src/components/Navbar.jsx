@@ -16,7 +16,7 @@ const SEARCHABLE_ITEMS = [
 
 
   // Ejemplo de destinos reales (¡ajusta según tu catálogo!)
-  { label: "Bariloche - Invierno 2025", path: "/nacionales/bariloche" },
+  { label: "Bariloche - Invierno 2026", path: "/nacionales/bariloche" },
   { label: "Europa Express - 21 Días", path: "/internacionales/europa" },
   { label: "Salta y Jujuy - Norte Argentino", path: "/nacionales/salta-jujuy" },
   { label: "Brasil - Rio y Foz", path: "/internacionales/brasil" },
@@ -258,8 +258,7 @@ export default function Navbar() {
             {[{ label: "INICIO", path: "/" },
               { label: "INDIVIDUALES", path: "/individuales" },
               { label: "EGRESADOS", path: "/egresados" },
-              { label: "EDUCATIVOS", path: "/educativos" },
-              { label: "ADMIN", path: "/login" }]
+              { label: "EDUCATIVOS", path: "/educativos" }]
               .map((i) => (
                 <li key={i.path}>
                   <NavLink
